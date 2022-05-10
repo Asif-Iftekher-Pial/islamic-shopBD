@@ -1,0 +1,88 @@
+[05-Oct-2021 12:59:26 America/Phoenix] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/islamics/public_html/config/services.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/islamics/public_html/config/services.php on line 18
+[05-Oct-2021 13:00:34 America/Phoenix] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/islamics/public_html/config/mail.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/islamics/public_html/config/mail.php on line 19
+[05-Oct-2021 13:11:40 America/Phoenix] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/islamics/public_html/config/filesystems.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/islamics/public_html/config/filesystems.php on line 16
+[05-Oct-2021 13:13:53 America/Phoenix] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/islamics/public_html/config/app.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/islamics/public_html/config/app.php on line 16
+[13-Oct-2021 19:10:20 America/Phoenix] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/islamics/public_html/config/services.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/islamics/public_html/config/services.php on line 18
+[13-Oct-2021 19:11:27 America/Phoenix] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/islamics/public_html/config/mail.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/islamics/public_html/config/mail.php on line 19
+[13-Oct-2021 19:22:34 America/Phoenix] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/islamics/public_html/config/filesystems.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/islamics/public_html/config/filesystems.php on line 16
+[13-Oct-2021 19:24:47 America/Phoenix] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/islamics/public_html/config/app.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/islamics/public_html/config/app.php on line 16
+[25-Oct-2021 05:48:24 America/Phoenix] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/islamics/public_html/config/services.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/islamics/public_html/config/services.php on line 18
+[25-Oct-2021 05:49:53 America/Phoenix] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/islamics/public_html/config/mail.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/islamics/public_html/config/mail.php on line 19
+[25-Oct-2021 06:04:40 America/Phoenix] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/islamics/public_html/config/filesystems.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/islamics/public_html/config/filesystems.php on line 16
+[25-Oct-2021 06:07:39 America/Phoenix] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/islamics/public_html/config/app.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/islamics/public_html/config/app.php on line 16
+[27-Oct-2021 09:01:27 America/Phoenix] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/islamics/public_html/config/services.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/islamics/public_html/config/services.php on line 18
+[27-Oct-2021 09:04:25 America/Phoenix] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/islamics/public_html/config/mail.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/islamics/public_html/config/mail.php on line 19
+[27-Oct-2021 09:34:00 America/Phoenix] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/islamics/public_html/config/filesystems.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/islamics/public_html/config/filesystems.php on line 16
+[27-Oct-2021 09:39:56 America/Phoenix] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/islamics/public_html/config/app.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/islamics/public_html/config/app.php on line 16
+[29-Oct-2021 06:17:56 America/Phoenix] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/islamics/public_html/config/services.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/islamics/public_html/config/services.php on line 18
+[29-Oct-2021 06:21:50 America/Phoenix] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/islamics/public_html/config/mail.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/islamics/public_html/config/mail.php on line 19
+[29-Oct-2021 07:00:43 America/Phoenix] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/islamics/public_html/config/filesystems.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/islamics/public_html/config/filesystems.php on line 16
+[29-Oct-2021 07:08:28 America/Phoenix] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/islamics/public_html/config/app.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/islamics/public_html/config/app.php on line 16
+[13-Feb-2022 15:47:47 America/Phoenix] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/islamics/public_html/config/app.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/islamics/public_html/config/app.php on line 16
+[13-Feb-2022 15:47:48 America/Phoenix] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/islamics/public_html/config/app.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/islamics/public_html/config/app.php on line 16
