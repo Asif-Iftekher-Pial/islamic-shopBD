@@ -396,6 +396,7 @@
         </section>
     </div>
     
+    
     <div id="just_for_you">
         <section class="mb-4">
             <div class="container">
@@ -459,6 +460,37 @@
             </div>
         </section>
     </div>
+
+    
+    <div class="container">
+        <div></div>
+        <div class="d-flex flex-row">
+            <div class="col-6">
+                <h4>প্রেসক্রিপশন এর মাধ্যমে অর্ডার করুন</h4>
+                <ul class="list-group">
+                    <li class="list-group-item"> <h5>১. প্রেসক্রিপশন এর ছবি তুলে অথবা স্ক্যান করে আপলোড করুন।</h5></li>
+                    <li class="list-group-item"><h5>২. আমাদের ফার্মাসিস্ট আপনার প্রেসক্রিপশন পেয়ে আপনার দেয়া ফোন নাম্বারে যোগাযোগ করবে। ( সকাল ১০টা থেকে রাত ১০টা )</h5></li>
+                    <li class="list-group-item"> <h5>৩. ফার্মাসিস্ট আপনার সাথে কথা বলে ঔষধ সিলেক্ট করে অর্ডার কনফার্ম করবে।</h5></li>
+                    <li class="list-group-item"><h5>৪. নির্দিষ্ট সময়ে আপনার ঔষধ/পণ্য ডেলিভারী নিন।</h5></li>
+                    <li class="list-group-item"><h5>৫. ঔষধ ডেলিভারীর সময় আপনার প্রেসক্রিপশন প্রদর্শন করুন।</h5></li>
+                </ul>
+
+                <div class="up-button d-flex">
+                    <button class="btn btn-lg btn-primary">Upload Prescription</button>
+                </div>
+            </div>
+            <div class="col-6">
+                <img src="{{ asset('upload_pres2.jpg') }}" alt="">
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+
+
 
 
     {{-- Top 10 categories and Brands --}}
