@@ -145,7 +145,7 @@
         nonce="BQpuMo5G"></script>
     <!-- aiz-main-wrapper -->
 
-    <div class="aiz-main-wrapper d-flex flex-column">
+    <div class="aiz-main-wrapper d-flex flex-column bg-white">
 
 
         {{-- start customization --}}

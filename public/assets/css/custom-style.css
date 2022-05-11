@@ -10,6 +10,7 @@
 }
 .text-yellow {
     color: #ffc14b !important;
+
 }
 .clock {
     position: absolute;
@@ -100,6 +101,18 @@
     margin-bottom: -10px;
 }
 
+.bg-main{
+    
+    background: #04b0f0 !important;
+}
+.border-main{
+    border-color: #04b0f0 !important;
+}
+
+.text-main{
+    color: #04b0f0 !important;
+}
+
 .top-header{
     padding-top: 13px;
     background: #04b0f0;
@@ -172,5 +185,128 @@ padding: 0.3rem 1.2rem;
 }
 .common-hr{
     border:#04b0f0 solid 1px;
-    margin: 50px auto;
+    margin: 20px auto;
+}
+
+.banner_fetures{
+    margin-bottom: 35px;
+}
+.mt_5{
+    margin-top: -10px !important;
+}
+
+.nav_hover_item{
+    border: 1px solid white;
+    padding: 10px 61px 10px 10px;
+    border-radius: 5px;
+}
+.nav_hover_item:hover{
+    background-color: white;
+}
+.nav_hover_item:hover a{
+    color: #04b0f0 !important;
+}
+.list_margin{
+    margin-left: 35px;
+    margin-top: 10px;
+}
+.nav_hover_item a{
+    line-height: 30px;
+}
+.border-radius-5{
+    border-radius: 5px !important;
+}
+
+/* why chose us section style*/
+#whyChoseUs .col{
+    padding: 0;
+}
+#whyChoseUs .card{
+    border: none;
+    border-radius: 0;
+    min-height: 320px;
+}
+#whyChoseUs .c1{
+    /* border-bottom: 3px solid greenyellow; */
+    border-right: 1px solid #ccc;
+}
+#whyChoseUs .c2{
+    /* border-bottom: 3px solid orange; */
+    border-right: 1px solid #ccc;
+}
+#whyChoseUs .c3{
+    /* border-bottom: 3px solid #00b7ff; */
+    /* border-right: 1px solid #ccc; */
+}
+#whyChoseUs .card-bg-image {
+    width: 100%;
+    height: 100%;
+    background-size: cover !important;
+}
+#whyChoseUs .c1 .card-bg-image {
+    background: url("https://media.gettyimages.com/photos/delivery-biker-looking-over-their-shoulder-picture-id1307965024?s=2048x2048") no-repeat;
+}
+#whyChoseUs .c2 .card-bg-image {
+    background: url("https://previews.123rf.com/images/cgdeaw/cgdeaw1808/cgdeaw180800075/106577384-fig-fruit-ficus-racemosa-fig-on-tree-nature-fig-forest-fruit-fig-red-and-green-thai-fruits.jpg?fj=1") no-repeat;
+}
+#whyChoseUs .c3 .card-bg-image {
+    background: url("https://s3.envato.com/files/315822185/132_1R3A9538.jpg") no-repeat;
+}
+#whyChoseUs .card-body{
+    padding: 0;
+}
+#whyChoseUs .card-body .card-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    bottom: 0;
+    position: absolute;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    height: 50%;
+    padding: 15px;
+}
+#whyChoseUs .card-body .card-content h3 {
+    color: white;
+    font-size: 20px;
+    font-weight: normal;
+    font-family: arial;
+}
+#whyChoseUs .card-body .card-content p {
+    color: white;
+    font-size: 15px;
+    text-align: center;
+}
+
+/* why chose us section style*/
+
+
+/* all catgory ectoin */
+
+.category_single_li{
+    padding: 10px 0px;
+    border-bottom: 1px dashed #04b0f0;
+}
+.category_single_li a{
+    font-size: 20px;
+    color: #04b0f0;
+}
+
+.category_single_li a:hover{
+    text-decoration: underline;
+    color: #04b0f0;
+}
+/* all catgory ectoin */
+
+
+
+.about_business h4{
+    color: #30698e;
+    font-size: 20px;
+}
+.about_business h5{
+    color: #04b0f0;
+    font-size: 24px;
+    line-height: 40px;    
 }

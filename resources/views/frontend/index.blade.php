@@ -465,15 +465,14 @@
     <div class="container">
         <div class="common-hr"></div>
         <div class="d-flex flex-row">
-           
-            <div class="col-6">
+            <div class="col-6 about_business">
                 <h4>প্রেসক্রিপশন এর মাধ্যমে অর্ডার করুন</h4>
-                <ul class="list-group">
-                    <li class="list-group-item"><h5>১. প্রেসক্রিপশন এর ছবি তুলে অথবা স্ক্যান করে আপলোড করুন।</h5></li>
-                    <li class="list-group-item"><h5>২. আমাদের ফার্মাসিস্ট আপনার প্রেসক্রিপশন পেয়ে আপনার দেয়া ফোন নাম্বারে যোগাযোগ করবে। ( সকাল ১০টা থেকে রাত ১০টা )</h5></li>
-                    <li class="list-group-item"><h5>৩. ফার্মাসিস্ট আপনার সাথে কথা বলে ঔষধ সিলেক্ট করে অর্ডার কনফার্ম করবে।</h5></li>
-                    <li class="list-group-item"><h5>৪. নির্দিষ্ট সময়ে আপনার ঔষধ/পণ্য ডেলিভারী নিন।</h5></li>
-                    <li class="list-group-item"><h5>৫. ঔষধ ডেলিভারীর সময় আপনার প্রেসক্রিপশন প্রদর্শন করুন।</h5></li>
+                <ul class="list-group bg-transparent">
+                    <li class="list-group-item bg-transparent border-0 p-0"><h5>১. প্রেসক্রিপশন এর ছবি তুলে অথবা স্ক্যান করে আপলোড করুন।</h5></li>
+                    <li class="list-group-item bg-transparent border-0 p-0"><h5>২. আমাদের ফার্মাসিস্ট আপনার প্রেসক্রিপশন পেয়ে আপনার দেয়া ফোন নাম্বারে যোগাযোগ করবে। ( সকাল ১০টা থেকে রাত ১০টা )</h5></li>
+                    <li class="list-group-item bg-transparent border-0 p-0"><h5>৩. ফার্মাসিস্ট আপনার সাথে কথা বলে ঔষধ সিলেক্ট করে অর্ডার কনফার্ম করবে।</h5></li>
+                    <li class="list-group-item bg-transparent border-0 p-0"><h5>৪. নির্দিষ্ট সময়ে আপনার ঔষধ/পণ্য ডেলিভারী নিন।</h5></li>
+                    <li class="list-group-item bg-transparent border-0 p-0"><h5>৫. ঔষধ ডেলিভারীর সময় আপনার প্রেসক্রিপশন প্রদর্শন করুন।</h5></li>
                 </ul>
 
                 <div class="up-button d-flex">
@@ -481,7 +480,7 @@
                 </div>
             </div>
             <div class="col-6">
-                <img src="{{ asset('upload_pres2.jpg') }}" alt="">
+                <img class="w-100" src="{{ asset('upload_pres2.jpg') }}" alt="">
             </div>
 
         </div>
@@ -489,6 +488,110 @@
     </div>
 
 
+{{-- why chose us --}}
+
+<div class="container" id="whyChoseUs">
+    <div class="row category">
+        <div class="col-md-12">
+            <div class="title text-center">
+                <h4>Why People Love Your Website</h4>
+            </div>
+        </div>
+    </div>
+
+    <div class="common-hr"></div>
+    <div class="row">
+        <div class="col-md-4 p-0">
+            <div class="card c1">
+                <div class="card-body card-bg-image">
+                    <div class="card-content">
+                        <h3>Convenient & Quick</h3>
+                        <p>No waiting in traffic, no haggling, no worries carrying groceries, they're delivered right at your door.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 p-0">
+            <div class="card c2">
+                <div class="card-body card-bg-image">
+                    <div class="card-content">
+                        <h3>Freshly Picked</h3>
+                        <p>Our fresh produce is sourced every morning, you get the best from us.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 p-0">
+            <div class="card c3">
+                <div class="card-body card-bg-image">
+                    <div class="card-content">
+                        <h3>A wide range of Products</h3>
+                        <p>With 4000+ Products to choose from, forget scouring those aisles for hours.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{{-- why chose us --}}
+
+
+
+{{-- all category section --}}
+
+
+
+<div class="container" id="whyChoseUs">
+    <div class="row category">
+        <div class="col-md-12">
+            <div class="title text-center">
+                <h4>WHY CHOOSE BANGLAMEDS ?</h4>
+            </div>
+        </div>
+    </div>
+    <div class="common-hr"></div>
+    <div class="row">
+        <div class="col-md-3">
+            <ul class="list-unstyled">
+                <li class="category_single_li"><a href="">category name</a></li>
+                <li class="category_single_li"><a href="">category name</a></li>
+                <li class="category_single_li"><a href="">category name</a></li>
+                <li class="category_single_li"><a href="">category name</a></li>
+                <li class="category_single_li"><a href="">category name</a></li>
+            </ul>
+        </div>
+        <div class="col-md-3">
+            <ul class="list-unstyled">
+                <li class="category_single_li"><a href="">category name</a></li>
+                <li class="category_single_li"><a href="">category name</a></li>
+                <li class="category_single_li"><a href="">category name</a></li>
+                <li class="category_single_li"><a href="">category name</a></li>
+                <li class="category_single_li"><a href="">category name</a></li>
+            </ul>
+        </div>
+        <div class="col-md-3">
+            <ul class="list-unstyled">
+                <li class="category_single_li"><a href="">category name</a></li>
+                <li class="category_single_li"><a href="">category name</a></li>
+                <li class="category_single_li"><a href="">category name</a></li>
+                <li class="category_single_li"><a href="">category name</a></li>
+                <li class="category_single_li"><a href="">category name</a></li>
+            </ul>
+        </div>
+        <div class="col-md-3">
+            <ul class="list-unstyled">
+                <li class="category_single_li"><a href="">category name</a></li>
+                <li class="category_single_li"><a href="">category name</a></li>
+                <li class="category_single_li"><a href="">category name</a></li>
+                <li class="category_single_li"><a href="">category name</a></li>
+                <li class="category_single_li"><a href="">category name</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="common-hr"></div>
+</div>
+
+{{-- all category section --}}
 
 
 

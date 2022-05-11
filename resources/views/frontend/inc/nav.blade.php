@@ -167,7 +167,6 @@
                     </ul>
                 </div>
                 <div class="collapse navbar-collapse" id="navbarText">
-
                     <ul class="navbar-nav mr-auto">
                         <li>
                             {{-- @if (Route::currentRouteName() != 'home') --}}
@@ -233,7 +232,7 @@
                     </ul>
                 </div>
                 {{-- @if (Route::currentRouteName() != 'home') --}}
-                    <div class="hover-category-menu position-absolute w-100 top-100 left-0 right-0 d-none z-3"
+                    <div class="hover-category-menu position-absolute w-100 top-100 left-0 right-0 d-none z-3 mt_5"
                         id="hover-category-menu">
                         <div class="container">
                             <div class="row gutters-10 position-relative">

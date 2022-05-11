@@ -6600,7 +6600,7 @@ ul.social.colored [class*="linkedin"] {
     overflow: hidden;
     top: 0;
     z-index: 9;
-    background-color: #fff;
+    background-color: #04b0f0;
     overflow-y: auto;
     margin-left: 15px;
 }
@@ -6610,6 +6610,8 @@ ul.social.colored [class*="linkedin"] {
 }
 .aiz-category-menu .category-nav-element:hover .sub-cat-menu{
     display: block;
+    background: #04b0f0;
+    border: white;
   
 }
 .aiz-category-menu .category-nav-element:hover > a{
@@ -6617,7 +6619,7 @@ ul.social.colored [class*="linkedin"] {
     z-index: 10;
     background: #fff;
     box-shadow: -2px 3px 5px rgb(0 0 0 / 0.1);
-    width:80% !important;
+    width:30% !important;
 }
 .hover-category-menu .all-category::before {
     position: absolute;
