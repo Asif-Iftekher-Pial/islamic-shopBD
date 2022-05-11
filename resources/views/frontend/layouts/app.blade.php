@@ -154,14 +154,9 @@
             <div class="leftside">
                 <div class="leftinside">
                     <a class="link" href="tell: (+88) 09638 120 130">Call: (+88) 09638 120 130</a>
-
-                    <a class="link" href="fb.com" target="_blank" class="facebook"><i
-                            class="lab la-facebook-square"></i></a>
-
+                    <a class="link" href="fb.com" target="_blank" class="facebook"><i class="lab la-facebook-square"></i></a>
                     <a class="link" href="instagram.com" target="_blank"><i class="lab la-instagram"></i></a>
-
                 </div>
-
             </div>
 
             <div class="middle">
@@ -169,28 +164,14 @@
                     href="https://play.google.com/store/apps/details?id=com.banglameds.banglameds">Download App</a>
                 <a class="link" href="https://play.google.com/store/apps/details?id=com.banglameds.banglameds"
                     target="_blank"><i class="lab la-android"></i></a>
-
-
             </div>
 
             <div class="right">
-
                 <a class="link" href="http://">How to order</a>
                 <a class="link" href="instagram.com" target="_blank"><i class="lab la-file-text"></i></a>
-
             </div>
 
         </div>
-
-
-
-
-
-
-
-
-
-
         {{-- end customization --}}
 
         @php

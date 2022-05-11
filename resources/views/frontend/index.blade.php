@@ -463,14 +463,15 @@
 
     
     <div class="container">
-        <div></div>
+        <div class="common-hr"></div>
         <div class="d-flex flex-row">
+           
             <div class="col-6">
                 <h4>প্রেসক্রিপশন এর মাধ্যমে অর্ডার করুন</h4>
                 <ul class="list-group">
-                    <li class="list-group-item"> <h5>১. প্রেসক্রিপশন এর ছবি তুলে অথবা স্ক্যান করে আপলোড করুন।</h5></li>
+                    <li class="list-group-item"><h5>১. প্রেসক্রিপশন এর ছবি তুলে অথবা স্ক্যান করে আপলোড করুন।</h5></li>
                     <li class="list-group-item"><h5>২. আমাদের ফার্মাসিস্ট আপনার প্রেসক্রিপশন পেয়ে আপনার দেয়া ফোন নাম্বারে যোগাযোগ করবে। ( সকাল ১০টা থেকে রাত ১০টা )</h5></li>
-                    <li class="list-group-item"> <h5>৩. ফার্মাসিস্ট আপনার সাথে কথা বলে ঔষধ সিলেক্ট করে অর্ডার কনফার্ম করবে।</h5></li>
+                    <li class="list-group-item"><h5>৩. ফার্মাসিস্ট আপনার সাথে কথা বলে ঔষধ সিলেক্ট করে অর্ডার কনফার্ম করবে।</h5></li>
                     <li class="list-group-item"><h5>৪. নির্দিষ্ট সময়ে আপনার ঔষধ/পণ্য ডেলিভারী নিন।</h5></li>
                     <li class="list-group-item"><h5>৫. ঔষধ ডেলিভারীর সময় আপনার প্রেসক্রিপশন প্রদর্শন করুন।</h5></li>
                 </ul>
@@ -484,6 +485,7 @@
             </div>
 
         </div>
+        <div class="common-hr"></div>
     </div>
 
 

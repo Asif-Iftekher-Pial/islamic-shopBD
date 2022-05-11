@@ -60,7 +60,7 @@
     left: 7rem;
 }
 .w-10 {
-    width: 10rem;
+    width: 842px;
 }
 .w-15 {
     width: 15rem;
@@ -92,7 +92,7 @@
     display: flex;
     -ms-flex-align: center;
     align-items: center;
-    background-color: #f59d37!important;
+    background-color: #04b0f0!important;
     padding: 10px!important;
     padding-top: px;
     padding-right: 5px;
@@ -165,9 +165,12 @@
 }
 .btn-lg{
     padding: 0.75rem 6.5rem;
-    font-size: 1rem;
-
+    font-size: 1.2rem;
 }
 .list-group-item{
 padding: 0.3rem 1.2rem;
+}
+.common-hr{
+    border:#04b0f0 solid 1px;
+    margin: 50px auto;
 }
