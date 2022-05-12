@@ -22,7 +22,7 @@
     font-family: Orbitron;
     letter-spacing: 7px;
 }
-.rounded {
+.rounded{
     /* border-radius: .75rem !important; */
 }
 .rounded-25 {
@@ -80,11 +80,14 @@
   .border-soft-secondary {
         display: none !important;
   }
+    .sm_search_input_slid{
+        position: inherit !important;
+    }
 }
-
+/*
 .pt-3 {
     padding-top: 0rem!important;
-}
+} */
 
 
 
@@ -102,11 +105,14 @@
 }
 
 .bg-main{
-    
+
     background: #04b0f0 !important;
 }
 .border-main{
     border-color: #04b0f0 !important;
+}
+.border-main-1{
+    border: 1px solid #04b0f0 !important;
 }
 
 .text-main{
@@ -128,11 +134,11 @@
     /* background: #f19426; */
     padding-bottom: 14px;
     width: 600px;
-  
+
 }
 
 .leftinside{
-    
+
     text-align: center;
     margin: 0 auto;
 }
@@ -189,7 +195,7 @@ padding: 0.3rem 1.2rem;
 }
 
 .banner_fetures{
-    margin-bottom: 35px;
+    margin-bottom: 60px;
 }
 .mt_5{
     margin-top: -10px !important;
@@ -308,5 +314,56 @@ padding: 0.3rem 1.2rem;
 .about_business h5{
     color: #04b0f0;
     font-size: 24px;
-    line-height: 40px;    
+    line-height: 40px;
 }
+
+.best_selling_title{
+    font-size: 30px !important;
+}
+.customerCare{
+    font-size: 18px;
+
+}
+
+.footerText{
+    color: black !important;
+}
+.text-hov-underline:hover{
+
+    text-decoration: underline !important;
+}
+.text-black{
+    color:black !important;
+}
+.contant_us_footer{
+    margin-left: -160px;
+}
+
+.footer_boder_color{
+    border-color: #c6c7cd !important;
+}
+
+
+/*header authentication section style*/
+
+.contact_number_auth{
+    right: 10%;
+}
+.search_button{
+    border-radius: 0;
+    margin-left: 15px;
+    color: white;
+}
+.user_fa_icon{
+    width: 39px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #04b0f0;
+    border-radius: 50%;
+    font-size: 39px;
+    color: white;
+    align-content: center;
+}
+/*header authentication section style*/

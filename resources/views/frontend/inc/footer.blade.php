@@ -29,22 +29,36 @@
     </div>
 </section> --}}
 
-<section class="bg-matt py-5 text-light footer-widget">
+<section class="bg-white py-5 text-light footer-widget">
     <div class="container">
         <div class="row">
-            {{-- <div class="col-md-3 text-center text-md-left mt-4">
-                <div class="fb-page" data-href="https://www.facebook.com/IslamicShopBD" data-tabs="timeline" data-width="" data-height="120" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="false"><blockquote cite="https://www.facebook.com/IslamicShopIndia" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/IslamicShopIndia">Islamic Shop</a></blockquote></div>
-            </div> --}}
-            <div class="col-md-3">
-                <div class="text-yellow font-weight-bold text-center text-md-left mt-4">
-                    <h4 class="fs-15 text-uppercase fw-600 border-bottom border-gray-900 pb-2 mb-4">
+            <div class="col-md-4">
+                @php
+                    $footer_logo = get_setting('footer_logo');
+                @endphp
+                @if($footer_logo != null)
+                    <img src="{{ uploaded_asset($footer_logo) }}" alt="{{ env('APP_NAME') }}" class="mw-100 h-60px h-md-80px" height="80">
+                @else
+                    <img src="{{ static_asset('assets/img/logo.png') }}" alt="{{ env('APP_NAME') }}" class="mw-100 h-60px h-md-80px" height="80">
+                @endif
+                <div class="text-main footerText font-weight-bold text-center text-md-left mt-4">
+                    <div class="my-3 fs-18 text-justify fw-400 lh-1-3">
+                        {!! get_setting('about_us_description') !!}
+                    </div>
+                </div>
+            </div>
+
+            {{-- customer care --}}
+            <div class="col-md-4">
+                <div class="text-main font-weight-bold text-center text-md-left mt-4">
+                    <h4 class="fs-19 fw-400 mb-3">
                         {{ get_setting('widget_one') }}
                     </h4>
-                    <ul class="list-unstyled">
+                    <ul class="list-unstyled customerCare">
                         @if ( get_setting('widget_one_labels') !=  null )
                             @foreach (json_decode( get_setting('widget_one_labels'), true) as $key => $value)
                             <li class="mb-2">
-                                <a href="{{ json_decode( get_setting('widget_one_links'), true)[$key] }}" class="opacity-50 hov-opacity-100 text-reset">
+                                <a href="{{ json_decode( get_setting('widget_one_links'), true)[$key] }}" class="text-black fw-500 fs-18 text-hov-underline">
                                     {{ $value }}
                                 </a>
                             </li>
@@ -53,166 +67,42 @@
                     </ul>
                 </div>
             </div>
-            <div class="col-md-3">
-                <div class="text-yellow font-weight-bold text-center text-md-left mt-4">
-                    <h4 class="fs-15 text-uppercase fw-600 border-bottom border-gray-900 pb-2 mb-4">
-                        {{ get_setting('widget_two') }}
+
+            {{-- earm with isb --}}
+            <div class="col-md-4 contant_us_footer">
+                <div class="text-main font-weight-bold text-center text-md-left mt-4">
+                    <h4 class="fs-19 fw-400 mb-3">
+                        {{ translate('Contact Us') }}
                     </h4>
-                    <ul class="list-unstyled">
-                        @if ( get_setting('widget_two_labels') !=  null )
-                            @foreach (json_decode( get_setting('widget_two_labels'), true) as $key => $value)
-                            <li class="mb-2">
-                                <a href="{{ json_decode( get_setting('widget_two_links'), true)[$key] }}" class="opacity-50 hov-opacity-100 text-reset">
-                                    {{ $value }}
-                                </a>
-                            </li>
-                            @endforeach
-                        @endif
-                    </ul>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="text-yellow font-weight-bold text-center text-md-left mt-4">
-                    <h4 class="fs-15 text-uppercase fw-600 border-bottom border-gray-900 pb-2 mb-4">
-                        {{ get_setting('widget_three') }}
-                    </h4>
-                    <ul class="list-unstyled">
-                        @if ( get_setting('widget_three_labels') !=  null )
-                            @foreach (json_decode( get_setting('widget_three_labels'), true) as $key => $value)
-                            <li class="mb-2">
-                                <a href="{{ json_decode( get_setting('widget_three_links'), true)[$key] }}" class="opacity-50 hov-opacity-100 text-reset">
-                                    {{ $value }}
-                                </a>
-                            </li>
-                            @endforeach
-                        @endif
-                    </ul>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="text-yellow font-weight-bold text-center text-md-left mt-4">
-                    <h4 class="text-yellow font-weight-bold fs-15 text-uppercase fw-600 border-bottom border-gray-900 pb-2 mb-4">
-                        {{ get_setting('about_widget_title') }}
-                    </h4>
-                    @php
-                        $footer_logo = get_setting('footer_logo');
-                    @endphp
-                    @if($footer_logo != null)
-                        <img src="{{ uploaded_asset($footer_logo) }}" alt="{{ env('APP_NAME') }}" class="mw-100 h-60px h-md-80px" height="80">
-                    @else
-                        <img src="{{ static_asset('assets/img/logo.png') }}" alt="{{ env('APP_NAME') }}" class="mw-100 h-60px h-md-80px" height="80">
-                    @endif
-                    <div class="my-3">
-                        {!! get_setting('about_us_description') !!}
-                    </div>
                     <div class="text-center text-md-left mt-4">
-                        <ul class="list-unstyled">
-                            <li class="mb-2">
-                               <span class="opacity-30">{{ translate('Address') }}:</span>
-                               <span class="opacity-70">{{ get_setting('contact_address') }}</span>
+                        <ul class="list-unstyled text-black fw-500 fs-18">
+                            <li class="mb-2 lh-1-2">
+                                {{ get_setting('contact_address') }}
                             </li>
-                            <li class="mb-2">
-                               <span class="opacity-30">{{translate('Phone')}}:</span> <span class="opacity-70"><a href="tel:+88{{ get_setting('contact_phone') }}" class="text-reset">{{ get_setting('contact_phone') }}</a></span>
+                            <li class="mb-2 lh-1-2">
+                               <a href="tel:+88{{ get_setting('contact_phone') }}" class="text-reset text-hov-underline">{{ "+88". get_setting('contact_phone') }}</a>
                             </li>
-                            <li class="mb-2">
-                               <span class="opacity-30">{{translate('Email')}}:</span>
-                               <span class="opacity-70">
-                                   <a href="mailto:{{ get_setting('contact_email') }}" class="text-reset">{{ get_setting('contact_email')  }}</a>
-                                </span>
+                            <li class="mb-2 lh-1-2">
+                                <a href="mailto:{{ get_setting('contact_email') }}" class="text-reset text-hov-underline">{{ get_setting('contact_email')  }}</a>
                             </li>
                         </ul>
                     </div>
-                    {{-- <div class="w-300px mw-100 mx-auto mx-md-0">
-                        <a href="{{ get_setting('play_store_link') }}" target="_blank" class="d-inline-block mr-3 ml-0">
-                            <img src="{{ static_asset('assets/img/play.png') }}" class="mx-100 h-40px">
-                        </a>
-                        <a href="{{ get_setting('app_store_link') }}" target="_blank" class="d-inline-block">
-                            <img src="{{ static_asset('assets/img/app.png') }}" class="mx-100 h-40px">
-                        </a>
-                    </div> --}}
-                    <h4 class="fs-13 text-uppercase fw-600 pb-2 mb-2 mt-2">
-                        {{ translate('Follow Us') }}
-                    </h4>
-                    <ul class="list-inline my-3 my-md-0 social colored">
-                        @if ( get_setting('facebook_link') !=  null )
-                        <li class="list-inline-item">
-                            <a href="{{ get_setting('facebook_link') }}" target="_blank" class="facebook"><i class="lab la-facebook-f"></i></a>
-                        </li>
-                        @endif
-                        @if ( get_setting('twitter_link') !=  null )
-                        <li class="list-inline-item">
-                            <a href="{{ get_setting('twitter_link') }}" target="_blank" class="twitter"><i class="lab la-twitter"></i></a>
-                        </li>
-                        @endif
-                        @if ( get_setting('instagram_link') !=  null )
-                        <li class="list-inline-item">
-                            <a href="{{ get_setting('instagram_link') }}" target="_blank" class="instagram"><i class="lab la-instagram"></i></a>
-                        </li>
-                        @endif
-                        @if ( get_setting('youtube_link') !=  null )
-                        <li class="list-inline-item">
-                            <a href="{{ get_setting('youtube_link') }}" target="_blank" class="youtube"><i class="lab la-youtube"></i></a>
-                        </li>
-                        @endif
-                        @if ( get_setting('linkedin_link') !=  null )
-                        <li class="list-inline-item">
-                            <a href="{{ get_setting('linkedin_link') }}" target="_blank" class="linkedin"><i class="lab la-linkedin-in"></i></a>
-                        </li>
-                        @endif
-                    </ul>
                 </div>
             </div>
-            {{-- <div class="col-md-3">
-                <div class="text-center text-md-left mt-4">
-                    <h4 class="text-yellow font-weight-bold fs-15 text-uppercase fw-600 border-bottom border-gray-900 pb-2 mb-4">
-                        {{ translate('Contact Info') }}
-                    </h4>
-                    <ul class="list-unstyled">
-                        <li class="mb-2">
-                           <span class="d-block opacity-30">{{ translate('Address') }}:</span>
-                           <span class="d-block opacity-70">{{ get_setting('contact_address') }}</span>
-                        </li>
-                        <li class="mb-2">
-                           <span class="d-block opacity-30">{{translate('Phone')}}:</span>
-                           <span class="d-block opacity-70">{{ get_setting('contact_phone') }}</span>
-                        </li>
-                        <li class="mb-2">
-                           <span class="d-block opacity-30">{{translate('Email')}}:</span>
-                           <span class="d-block opacity-70">
-                               <a href="mailto:{{ get_setting('contact_email') }}" class="text-reset">{{ get_setting('contact_email')  }}</a>
-                            </span>
-                        </li>
-                    </ul>
-                </div>
-            </div> --}}
         </div>
     </div>
 </section>
 
 <!-- FOOTER -->
-<footer class="pt-3 pb-7 pb-xl-3 bg-yellow text-light">
-    <div class="container">
-        <div class="row align-items-center">
-            <div class="col-lg-12">
-                <div class="text-center">
-                    <ul class="list-inline mb-0">
-                        @if ( get_setting('payment_method_images') !=  null )
-                            @foreach (explode(',', get_setting('payment_method_images')) as $key => $value)
-                                <li class="list-inline-item">
-                                    <img src="{{ uploaded_asset($value) }}" height="30" class="mw-100 h-auto">
-                                </li>
-                            @endforeach
-                        @endif
-                    </ul>
-                </div>
-            </div>
-            <div class="col-lg-12">
-                <div class="text-center">
+<footer class="pt-3 pb-7 pb-xl-3 bg-white text-black ">
+    <div class="container border-top footer_boder_color">
+        <div class="row align-items-center pt-3 justify-content-between">
+                <p>Developed and maintained with love by Trenza Softwares</p>
+                <p>
                     @php
                         echo get_setting('frontend_copyright_text');
                     @endphp
-                </div>
-            </div>
+                </p>
         </div>
     </div>
 </footer>

@@ -30,9 +30,9 @@
                     @endif
                 </div>
             </div>
-           
+
             <div class="col-lg-12">
-              
+
                 @php
                     $featured_categories = \App\Category::where('featured', 1)->get();
                 @endphp
@@ -63,9 +63,9 @@
 </div>
 
 
-    {{-- Banner section 1 --}}
+{{--     Banner section 1 --}}
 
-    {{-- @if (get_setting('home_banner1_images') != null)
+     {{-- @if (get_setting('home_banner1_images') != null)
     <div class="mb-4">
         <div class="container">
             <div class="row gutters-10 text-center">
@@ -84,7 +84,7 @@
     </div>
     @endif --}}
 
-    
+
         <div class="container banner_fetures">
             <div class="row banner_main_row">
                 <div class="col-6">
@@ -96,7 +96,7 @@
                 <div class="col-6">
                     <div class="row banner_row_top">
                         <div class="col">
-                           
+
                             <div class="card left-card-image">
                                 <img src="{{ asset('offline_banner.jpg') }}" alt="" srcset="" style="height: 65%;">
                             </div>
@@ -122,7 +122,7 @@
                 </div>
             </div>
         </div>
-   
+
     {{-- <div class="container">
         <div class="row">
           <div class="col">
@@ -166,7 +166,7 @@
 
 
     {{-- Flash Deal --}}
-    @php
+    {{-- @php
         $flash_deal = \App\FlashDeal::where('status', 1)->where('featured', 1)->first();
     @endphp
     @if($flash_deal != null && strtotime(date('Y-m-d H:i:s')) >= $flash_deal->start_date && strtotime(date('Y-m-d H:i:s')) <= $flash_deal->end_date)
@@ -216,9 +216,9 @@
                                         <h3 class="fw-600 fs-13 text-truncate-2 lh-1-4 mb-0 h-35px">
                                             <a href="{{ route('product', $product->slug) }}" class="d-block text-reset">{{  $product->getTranslation('name')  }}</a>
                                         </h3>
-                                        {{-- <div class="rating rating-sm mt-1">
+                                         <div class="rating rating-sm mt-1">
                                             {{ renderStarRating($product->rating) }}
-                                        </div> --}}
+                                        </div>
                                         <div class="fs-15">
                                             @if(home_base_price($product->id) != home_discounted_base_price($product->id))
                                                 <del class="fw-600 opacity-50 mr-1">{{ home_base_price($product->id) }}</del>
@@ -245,227 +245,248 @@
             </div>
         </div>
     </section>
-    @endif
-    
-        {{-- Best Selling  --}}
+    @endif --}}
+
+{{--         Best Selling  --}}
     <div id="section_best_selling">
 
     </div>
-    
-        {{-- Banner Section 2 --}}
-    @if (get_setting('home_banner2_images') != null)
-    <div class="mb-4">
-        <div class="container">
-            <div class="row gutters-10">
-                @php $banner_2_imags = json_decode(get_setting('home_banner2_images')); @endphp
-                @foreach ($banner_2_imags as $key => $value)
-                    <div class="col-xl-2 col-md-2 col-sm-6 col-6">
-                        <div class="mb-3 mb-lg-0">
-                            <a href="{{ json_decode(get_setting('home_banner2_links'), true)[$key] }}" class="d-block text-reset">
-                                <img src="{{ static_asset('assets/img/placeholder-rect.jpg') }}" data-src="{{ uploaded_asset($banner_2_imags[$key]) }}" alt="{{ env('APP_NAME') }} promo" class="img-fluid lazyload">
-                            </a>
-                        </div>
-                    </div>
-                @endforeach
-            </div>
-        </div>
-    </div>
-    @endif
-    
-    {{-- Banner Section 2 --}}
-    @if (get_setting('home_banner3_images') != null)
-    <div class="mb-4">
-        <div class="container">
-            <div class="row gutters-10">
-                @php $banner_3_imags = json_decode(get_setting('home_banner3_images')); @endphp
-                @foreach ($banner_3_imags as $key => $value)
-                    <div class="col">
-                        <div class="mb-3 mb-lg-0">
-                            <a href="{{ json_decode(get_setting('home_banner3_links'), true)[$key] }}" class="d-block text-reset">
-                                <img src="{{ static_asset('assets/img/placeholder-rect.jpg') }}" data-src="{{ uploaded_asset($banner_3_imags[$key]) }}" alt="{{ env('APP_NAME') }} promo" class="img-fluid lazyload">
-                            </a>
-                        </div>
-                    </div>
-                @endforeach
-            </div>
-        </div>
-    </div>
-    @endif
 
-    {{-- Top 10 categories --}}
-    <section class="mb-4">
-        <div class="container">
-            <div class="row gutters-10">
-                @if (get_setting('top10_categories') != null)
-                    <div class="col-lg-12">
-                        <div class="d-flex align-items-baseline">
-                            <h3 class="h5 fw-700 mb-0">
-                                <span class="pb-3 d-inline-block">{{ translate('Top Categories') }}</span>
-                            </h3>
-                            <a href="{{ route('categories.all') }}" class="ml-auto mr-0 btn bg-matt text-white btn-sm shadow-md">{{ translate('View All') }}</a>
-                        </div>
-                        <div class="row gutters-5">
-                            @php $top10_categories = json_decode(get_setting('top10_categories')); @endphp
-                            @foreach ($top10_categories as $key => $value)
-                                @php $category = \App\Category::find($value); @endphp
-                                @if ($category != null)
-                                    <div class="col-6 col-sm-4 col-md-2 col-lg-2">
-                                        <a href="{{ route('products.category', $category->slug) }}" class="d-block p-3">
-                                            <img
-                                                src="{{ static_asset('assets/img/placeholder.jpg') }}"
-                                                data-src="{{ uploaded_asset($category->banner) }}"
-                                                alt="{{ $category->getTranslation('name') }}"
-                                                class="img-fluid lazyload"
-                                            >
-                                        </a>
-                                        <h2 class="h6 fw-600 text-truncate text-center">
-                                            <a href="{{ route('products.category', $category->slug) }}" class="text-reset">{{ $category->getTranslation('name') }}</a>
-                                        </h2>
-                                    </div>
-                                @endif
-                            @endforeach
-                        </div>
-                    </div>
-                @endif
-            </div>
-        </div>
-    </section>
 
-    
-    <div id="new_arrival">
-        <section class="mb-4">
-            <div class="container">
-                <div class="px-2 py-4 px-md-4 py-md-3 bg-white shadow-sm rounded">
-                    <div class="d-flex mb-3 align-items-baseline border-bottom">
-                        <h3 class="h5 fw-700 mb-0">
-                            <span class="border-bottom border-primary border-width-2 pb-3 d-inline-block">{{ translate('New Arrival') }}</span>
-                        </h3>
-                    </div>
-                    <div class="aiz-carousel gutters-10 half-outside-arrow" data-rows="2" data-items="5" data-xl-items="5" data-lg-items="5"  data-md-items="3" data-sm-items="2" data-xs-items="2" data-arrows='true' data-infinite='true'>
-                        @foreach (filter_products(\App\Product::where('published', 1)->orderBy('id', 'desc')->limit(20))->get() as $key => $product)
-                            <div class="carousel-box">
-                                <div class="aiz-card-box border border-light rounded hov-shadow-md my-2 has-transition">
-                                    <div class="position-relative">
-                                        <a href="{{ route('product', $product->slug) }}" class="d-block">
-                                            <img
-                                                class="img-fit lazyload mx-auto h-140px h-md-210px"
-                                                src="{{ static_asset('assets/img/placeholder.jpg') }}"
-                                                data-src="{{ uploaded_asset($product->thumbnail_img) }}"
-                                                alt="{{  $product->getTranslation('name')  }}"
-                                                onerror="this.onerror=null;this.src='{{ static_asset('assets/img/placeholder.jpg') }}';"
-                                            >
-                                        </a>
-                                        <div class="absolute-top-right aiz-p-hov-icon">
-                                            <a href="javascript:void(0)" onclick="addToWishList({{ $product->id }})" data-toggle="tooltip" data-title="{{ translate('Add to wishlist') }}" data-placement="left">
-                                                <i class="la la-heart-o"></i>
-                                            </a>
-                                            <a href="javascript:void(0)" onclick="addToCompare({{ $product->id }})" data-toggle="tooltip" data-title="{{ translate('Add to compare') }}" data-placement="left">
-                                                <i class="las la-sync"></i>
-                                            </a>
-                                            <a href="javascript:void(0)" onclick="showAddToCartModal({{ $product->id }})" data-toggle="tooltip" data-title="{{ translate('Add to cart') }}" data-placement="left">
-                                                <i class="las la-shopping-cart"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="p-md-3 p-2 text-left">
-                                        <h3 class="fw-600 fs-13 text-truncate-2 lh-1-4 mb-0 h-35px">
-                                            <a href="{{ route('product', $product->slug) }}" class="d-block text-reset">{{  $product->getTranslation('name')  }}</a>
-                                        </h3>
-                                        {{-- <div class="rating rating-sm mt-1">
-                                            {{ renderStarRating($product->rating) }}
-                                        </div> --}}
-                                        <div class="fs-15">
-                                            @if(home_base_price($product->id) != home_discounted_base_price($product->id))
-                                                <del class="fw-600 opacity-50 mr-1">{{ home_base_price($product->id) }}</del>
-                                            @endif
-                                            <span class="fw-700 text-primary">{{ home_discounted_base_price($product->id) }}</span>
-                                        </div>
-                                        @if (\App\Addon::where('unique_identifier', 'club_point')->first() != null && \App\Addon::where('unique_identifier', 'club_point')->first()->activated)
-                                            <div class="rounded px-2 mt-2 bg-soft-primary border-soft-primary border">
-                                                {{ translate('Club Point') }}:
-                                                <span class="fw-700 float-right">{{ $product->earn_point }}</span>
-                                            </div>
-                                        @endif
-                                    </div>
-                                </div>
-                            </div>
-                        @endforeach
-                    </div>
-                </div>
-            </div>
-        </section>
-    </div>
-    
-    
-    <div id="just_for_you">
-        <section class="mb-4">
-            <div class="container">
-                <div class="px-2 py-4 px-md-4 py-md-3 bg-white shadow-sm rounded">
-                    <div class="d-flex mb-3 align-items-baseline border-bottom">
-                        <h3 class="h5 fw-700 mb-0">
-                            <span class="border-bottom border-primary border-width-2 pb-3 d-inline-block">{{ translate('Just For You') }}</span>
-                        </h3>
-                    </div>
-                    <div class="aiz-carousel gutters-10 half-outside-arrow" data-rows="4" data-items="5" data-xl-items="5" data-lg-items="5"  data-md-items="3" data-sm-items="2" data-xs-items="2" data-arrows='true' data-infinite='true'>
-                        @foreach (filter_products(\App\Product::where('published', 1)->inRandomOrder()->limit(30))->get() as $key => $product)
-                            <div class="carousel-box">
-                                <div class="aiz-card-box border border-light rounded hov-shadow-md my-2 has-transition">
-                                    <div class="position-relative">
-                                        <a href="{{ route('product', $product->slug) }}" class="d-block">
-                                            <img
-                                                class="img-fit lazyload mx-auto h-140px h-md-210px"
-                                                src="{{ static_asset('assets/img/placeholder.jpg') }}"
-                                                data-src="{{ uploaded_asset($product->thumbnail_img) }}"
-                                                alt="{{  $product->getTranslation('name')  }}"
-                                                onerror="this.onerror=null;this.src='{{ static_asset('assets/img/placeholder.jpg') }}';"
-                                            >
-                                        </a>
-                                        <div class="absolute-top-right aiz-p-hov-icon">
-                                            <a href="javascript:void(0)" onclick="addToWishList({{ $product->id }})" data-toggle="tooltip" data-title="{{ translate('Add to wishlist') }}" data-placement="left">
-                                                <i class="la la-heart-o"></i>
-                                            </a>
-                                            <a href="javascript:void(0)" onclick="addToCompare({{ $product->id }})" data-toggle="tooltip" data-title="{{ translate('Add to compare') }}" data-placement="left">
-                                                <i class="las la-sync"></i>
-                                            </a>
-                                            <a href="javascript:void(0)" onclick="showAddToCartModal({{ $product->id }})" data-toggle="tooltip" data-title="{{ translate('Add to cart') }}" data-placement="left">
-                                                <i class="las la-shopping-cart"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="p-md-3 p-2 text-left">
-                                        <h3 class="fw-600 fs-13 text-truncate-2 lh-1-4 mb-0 h-35px">
-                                            <a href="{{ route('product', $product->slug) }}" class="d-block text-reset">{{  $product->getTranslation('name')  }}</a>
-                                        </h3>
-                                        {{-- <div class="rating rating-sm mt-1">
-                                            {{ renderStarRating($product->rating) }}
-                                        </div> --}}
-                                        <div class="fs-15">
-                                            @if(home_base_price($product->id) != home_discounted_base_price($product->id))
-                                                <del class="fw-600 opacity-50 mr-1">{{ home_base_price($product->id) }}</del>
-                                            @endif
-                                            <span class="fw-700 text-primary">{{ home_discounted_base_price($product->id) }}</span>
-                                        </div>
-                                        @if (\App\Addon::where('unique_identifier', 'club_point')->first() != null && \App\Addon::where('unique_identifier', 'club_point')->first()->activated)
-                                            <div class="rounded px-2 mt-2 bg-soft-primary border-soft-primary border">
-                                                {{ translate('Club Point') }}:
-                                                <span class="fw-700 float-right">{{ $product->earn_point }}</span>
-                                            </div>
-                                        @endif
-                                    </div>
-                                </div>
-                            </div>
-                        @endforeach
-                    </div>
-                </div>
-            </div>
-        </section>
-    </div>
 
-    
+
+{{--         Banner Section 2 --}}
+{{--    @if (get_setting('home_banner2_images') != null)--}}
+{{--    <div class="mb-4">--}}
+{{--        <div class="container">--}}
+{{--            <div class="row gutters-10">--}}
+{{--                @php $banner_2_imags = json_decode(get_setting('home_banner2_images')); @endphp--}}
+{{--                @foreach ($banner_2_imags as $key => $value)--}}
+{{--                    <div class="col-xl-2 col-md-2 col-sm-6 col-6">--}}
+{{--                        <div class="mb-3 mb-lg-0">--}}
+{{--                            <a href="{{ json_decode(get_setting('home_banner2_links'), true)[$key] }}" class="d-block text-reset">--}}
+{{--                                <img src="{{ static_asset('assets/img/placeholder-rect.jpg') }}" data-src="{{ uploaded_asset($banner_2_imags[$key]) }}" alt="{{ env('APP_NAME') }} promo" class="img-fluid lazyload">--}}
+{{--                            </a>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                @endforeach--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </div>--}}
+{{--    @endif--}}
+
+{{--    --}}{{-- Banner Section 2 --}}
+{{--    @if (get_setting('home_banner3_images') != null)--}}
+{{--    <div class="mb-4">--}}
+{{--        <div class="container">--}}
+{{--            <div class="row gutters-10">--}}
+{{--                @php $banner_3_imags = json_decode(get_setting('home_banner3_images')); @endphp--}}
+{{--                @foreach ($banner_3_imags as $key => $value)--}}
+{{--                    <div class="col">--}}
+{{--                        <div class="mb-3 mb-lg-0">--}}
+{{--                            <a href="{{ json_decode(get_setting('home_banner3_links'), true)[$key] }}" class="d-block text-reset">--}}
+{{--                                <img src="{{ static_asset('assets/img/placeholder-rect.jpg') }}" data-src="{{ uploaded_asset($banner_3_imags[$key]) }}" alt="{{ env('APP_NAME') }} promo" class="img-fluid lazyload">--}}
+{{--                            </a>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                @endforeach--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </div>--}}
+{{--    @endif--}}
+
+{{--    --}}{{-- Top 10 categories --}}
+{{--    <section class="mb-4">--}}
+{{--        <div class="container">--}}
+{{--            <div class="row gutters-10">--}}
+{{--                @if (get_setting('top10_categories') != null)--}}
+{{--                    <div class="col-lg-12">--}}
+{{--                        <div class="d-flex align-items-baseline">--}}
+{{--                            <h3 class="h5 fw-700 mb-0">--}}
+{{--                                <span class="pb-3 d-inline-block">{{ translate('Top Categories') }}</span>--}}
+{{--                            </h3>--}}
+{{--                            <a href="{{ route('categories.all') }}" class="ml-auto mr-0 btn bg-matt text-white btn-sm shadow-md">{{ translate('View All') }}</a>--}}
+{{--                        </div>--}}
+{{--                        <div class="row gutters-5">--}}
+{{--                            @php $top10_categories = json_decode(get_setting('top10_categories')); @endphp--}}
+{{--                            @foreach ($top10_categories as $key => $value)--}}
+{{--                                @php $category = \App\Category::find($value); @endphp--}}
+{{--                                @if ($category != null)--}}
+{{--                                    <div class="col-6 col-sm-4 col-md-2 col-lg-2">--}}
+{{--                                        <a href="{{ route('products.category', $category->slug) }}" class="d-block p-3">--}}
+{{--                                            <img--}}
+{{--                                                src="{{ static_asset('assets/img/placeholder.jpg') }}"--}}
+{{--                                                data-src="{{ uploaded_asset($category->banner) }}"--}}
+{{--                                                alt="{{ $category->getTranslation('name') }}"--}}
+{{--                                                class="img-fluid lazyload"--}}
+{{--                                            >--}}
+{{--                                        </a>--}}
+{{--                                        <h2 class="h6 fw-600 text-truncate text-center">--}}
+{{--                                            <a href="{{ route('products.category', $category->slug) }}" class="text-reset">{{ $category->getTranslation('name') }}</a>--}}
+{{--                                        </h2>--}}
+{{--                                    </div>--}}
+{{--                                @endif--}}
+{{--                            @endforeach--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                @endif--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </section>--}}
+
+
+{{--    <div id="new_arrival">--}}
+{{--        <section class="mb-4">--}}
+{{--            <div class="container">--}}
+{{--                <div class="px-2 py-4 px-md-4 py-md-3 bg-white shadow-sm rounded">--}}
+{{--                    <div class="d-flex mb-3 align-items-baseline border-bottom">--}}
+{{--                        <h3 class="h5 fw-700 mb-0">--}}
+{{--                            <span class="border-bottom border-primary border-width-2 pb-3 d-inline-block">{{ translate('New Arrival') }}</span>--}}
+{{--                        </h3>--}}
+{{--                    </div>--}}
+{{--                    <div class="aiz-carousel gutters-10 half-outside-arrow" data-rows="2" data-items="5" data-xl-items="5" data-lg-items="5"  data-md-items="3" data-sm-items="2" data-xs-items="2" data-arrows='true' data-infinite='true'>--}}
+{{--                        @foreach (filter_products(\App\Product::where('published', 1)->orderBy('id', 'desc')->limit(20))->get() as $key => $product)--}}
+{{--                            <div class="carousel-box">--}}
+{{--                                <div class="aiz-card-box border border-light rounded hov-shadow-md my-2 has-transition">--}}
+{{--                                    <div class="position-relative">--}}
+{{--                                        <a href="{{ route('product', $product->slug) }}" class="d-block">--}}
+{{--                                            <img--}}
+{{--                                                class="img-fit lazyload mx-auto h-140px h-md-210px"--}}
+{{--                                                src="{{ static_asset('assets/img/placeholder.jpg') }}"--}}
+{{--                                                data-src="{{ uploaded_asset($product->thumbnail_img) }}"--}}
+{{--                                                alt="{{  $product->getTranslation('name')  }}"--}}
+{{--                                                onerror="this.onerror=null;this.src='{{ static_asset('assets/img/placeholder.jpg') }}';"--}}
+{{--                                            >--}}
+{{--                                        </a>--}}
+{{--                                        <div class="absolute-top-right aiz-p-hov-icon">--}}
+{{--                                            <a href="javascript:void(0)" onclick="addToWishList({{ $product->id }})" data-toggle="tooltip" data-title="{{ translate('Add to wishlist') }}" data-placement="left">--}}
+{{--                                                <i class="la la-heart-o"></i>--}}
+{{--                                            </a>--}}
+{{--                                            <a href="javascript:void(0)" onclick="addToCompare({{ $product->id }})" data-toggle="tooltip" data-title="{{ translate('Add to compare') }}" data-placement="left">--}}
+{{--                                                <i class="las la-sync"></i>--}}
+{{--                                            </a>--}}
+{{--                                            <a href="javascript:void(0)" onclick="showAddToCartModal({{ $product->id }})" data-toggle="tooltip" data-title="{{ translate('Add to cart') }}" data-placement="left">--}}
+{{--                                                <i class="las la-shopping-cart"></i>--}}
+{{--                                            </a>--}}
+{{--                                        </div>--}}
+{{--                                    </div>--}}
+{{--                                    <div class="p-md-3 p-2 text-left">--}}
+{{--                                        <h3 class="fw-600 fs-13 text-truncate-2 lh-1-4 mb-0 h-35px">--}}
+{{--                                            <a href="{{ route('product', $product->slug) }}" class="d-block text-reset">{{  $product->getTranslation('name')  }}</a>--}}
+{{--                                        </h3>--}}
+{{--                                        --}}{{-- <div class="rating rating-sm mt-1">--}}
+{{--                                            {{ renderStarRating($product->rating) }}--}}
+{{--                                        </div> --}}
+{{--                                        <div class="fs-15">--}}
+{{--                                            @if(home_base_price($product->id) != home_discounted_base_price($product->id))--}}
+{{--                                                <del class="fw-600 opacity-50 mr-1">{{ home_base_price($product->id) }}</del>--}}
+{{--                                            @endif--}}
+{{--                                            <span class="fw-700 text-primary">{{ home_discounted_base_price($product->id) }}</span>--}}
+{{--                                        </div>--}}
+{{--                                        @if (\App\Addon::where('unique_identifier', 'club_point')->first() != null && \App\Addon::where('unique_identifier', 'club_point')->first()->activated)--}}
+{{--                                            <div class="rounded px-2 mt-2 bg-soft-primary border-soft-primary border">--}}
+{{--                                                {{ translate('Club Point') }}:--}}
+{{--                                                <span class="fw-700 float-right">{{ $product->earn_point }}</span>--}}
+{{--                                            </div>--}}
+{{--                                        @endif--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        @endforeach--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </section>--}}
+{{--    </div>--}}
+
+
+{{--    <div id="just_for_you">--}}
+{{--        <section class="mb-4">--}}
+{{--            <div class="container">--}}
+{{--                <div class="px-2 py-4 px-md-4 py-md-3 bg-white shadow-sm rounded">--}}
+{{--                    <div class="d-flex mb-3 align-items-baseline border-bottom">--}}
+{{--                        <h3 class="h5 fw-700 mb-0">--}}
+{{--                            <span class="border-bottom border-primary border-width-2 pb-3 d-inline-block">{{ translate('Just For You') }}</span>--}}
+{{--                        </h3>--}}
+{{--                    </div>--}}
+{{--                    <div class="aiz-carousel gutters-10 half-outside-arrow" data-rows="4" data-items="5" data-xl-items="5" data-lg-items="5"  data-md-items="3" data-sm-items="2" data-xs-items="2" data-arrows='true' data-infinite='true'>--}}
+{{--                        @foreach (filter_products(\App\Product::where('published', 1)->inRandomOrder()->limit(30))->get() as $key => $product)--}}
+{{--                            <div class="carousel-box">--}}
+{{--                                <div class="aiz-card-box border border-light rounded hov-shadow-md my-2 has-transition">--}}
+{{--                                    <div class="position-relative">--}}
+{{--                                        <a href="{{ route('product', $product->slug) }}" class="d-block">--}}
+{{--                                            <img--}}
+{{--                                                class="img-fit lazyload mx-auto h-140px h-md-210px"--}}
+{{--                                                src="{{ static_asset('assets/img/placeholder.jpg') }}"--}}
+{{--                                                data-src="{{ uploaded_asset($product->thumbnail_img) }}"--}}
+{{--                                                alt="{{  $product->getTranslation('name')  }}"--}}
+{{--                                                onerror="this.onerror=null;this.src='{{ static_asset('assets/img/placeholder.jpg') }}';"--}}
+{{--                                            >--}}
+{{--                                        </a>--}}
+{{--                                        <div class="absolute-top-right aiz-p-hov-icon">--}}
+{{--                                            <a href="javascript:void(0)" onclick="addToWishList({{ $product->id }})" data-toggle="tooltip" data-title="{{ translate('Add to wishlist') }}" data-placement="left">--}}
+{{--                                                <i class="la la-heart-o"></i>--}}
+{{--                                            </a>--}}
+{{--                                            <a href="javascript:void(0)" onclick="addToCompare({{ $product->id }})" data-toggle="tooltip" data-title="{{ translate('Add to compare') }}" data-placement="left">--}}
+{{--                                                <i class="las la-sync"></i>--}}
+{{--                                            </a>--}}
+{{--                                            <a href="javascript:void(0)" onclick="showAddToCartModal({{ $product->id }})" data-toggle="tooltip" data-title="{{ translate('Add to cart') }}" data-placement="left">--}}
+{{--                                                <i class="las la-shopping-cart"></i>--}}
+{{--                                            </a>--}}
+{{--                                        </div>--}}
+{{--                                    </div>--}}
+{{--                                    <div class="p-md-3 p-2 text-left">--}}
+{{--                                        <h3 class="fw-600 fs-13 text-truncate-2 lh-1-4 mb-0 h-35px">--}}
+{{--                                            <a href="{{ route('product', $product->slug) }}" class="d-block text-reset">{{  $product->getTranslation('name')  }}</a>--}}
+{{--                                        </h3>--}}
+{{--                                        --}}{{-- <div class="rating rating-sm mt-1">--}}
+{{--                                            {{ renderStarRating($product->rating) }}--}}
+{{--                                        </div> --}}
+{{--                                        <div class="fs-15">--}}
+{{--                                            @if(home_base_price($product->id) != home_discounted_base_price($product->id))--}}
+{{--                                                <del class="fw-600 opacity-50 mr-1">{{ home_base_price($product->id) }}</del>--}}
+{{--                                            @endif--}}
+{{--                                            <span class="fw-700 text-primary">{{ home_discounted_base_price($product->id) }}</span>--}}
+{{--                                        </div>--}}
+{{--                                        @if (\App\Addon::where('unique_identifier', 'club_point')->first() != null && \App\Addon::where('unique_identifier', 'club_point')->first()->activated)--}}
+{{--                                            <div class="rounded px-2 mt-2 bg-soft-primary border-soft-primary border">--}}
+{{--                                                {{ translate('Club Point') }}:--}}
+{{--                                                <span class="fw-700 float-right">{{ $product->earn_point }}</span>--}}
+{{--                                            </div>--}}
+{{--                                        @endif--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        @endforeach--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </section>--}}
+{{--    </div>--}}
+
+
+{{--    <div class="container">--}}
+{{--        <div class="common-hr"></div>--}}
+{{--        <div class="d-flex flex-row">--}}
+{{--            <div class="col-md-6 col-12 col-lg-6 about_business">v--}}
+{{--                <div class="up-button d-flex">--}}
+{{--                    <button class="btn btn-lg btn-primary">Upload Prescription</button>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--            <div class="col-md-6 col-12 col-lg-6">--}}
+{{--                <img class="w-100" src="{{ asset('upload_pres2.jpg') }}" alt="">--}}
+{{--            </div>--}}
+
+{{--        </div>--}}
+{{--        <div class="common-hr"></div>--}}
+{{--    </div>--}}
+
+
     <div class="container">
         <div class="common-hr"></div>
-        <div class="d-flex flex-row">
-            <div class="col-6 about_business">
+
+        <div class="row">
+            <div class="col-md-6">
                 <h4>প্রেসক্রিপশন এর মাধ্যমে অর্ডার করুন</h4>
                 <ul class="list-group bg-transparent">
                     <li class="list-group-item bg-transparent border-0 p-0"><h5>১. প্রেসক্রিপশন এর ছবি তুলে অথবা স্ক্যান করে আপলোড করুন।</h5></li>
@@ -475,16 +496,13 @@
                     <li class="list-group-item bg-transparent border-0 p-0"><h5>৫. ঔষধ ডেলিভারীর সময় আপনার প্রেসক্রিপশন প্রদর্শন করুন।</h5></li>
                 </ul>
 
-                <div class="up-button d-flex">
-                    <button class="btn btn-lg btn-primary">Upload Prescription</button>
-                </div>
             </div>
-            <div class="col-6">
-                <img class="w-100" src="{{ asset('upload_pres2.jpg') }}" alt="">
+
+            <div class="col-md-6">
+                <img class="img-fluid" src="{{ asset('upload_pres2.jpg') }}" alt="">
             </div>
 
         </div>
-        <div class="common-hr"></div>
     </div>
 
 
@@ -622,7 +640,7 @@
                                     <div class="col-12 col-lg-9">
                                         <div class="row gutters-5 row-cols-xxl-4 row-cols-xl-2 row-cols-lg-4 row-cols-md-2 row-cols-2">
                                             @if(count(\App\Utility\CategoryUtility::get_immediate_children_ids($category->id))>0)
-                                                @foreach (\App\Utility\CategoryUtility::get_immediate_children_ids($category->id) as $ids) 
+                                                @foreach (\App\Utility\CategoryUtility::get_immediate_children_ids($category->id) as $ids)
                                                     @php
                                                         $subcat = \App\Category::find($ids);
                                                     @endphp
