@@ -153,20 +153,20 @@
         <div class="top-header d-flex flex-row">
             <div class="leftside">
                 <div class="leftinside">
-                    <a class="link" href="tell: (+88) 09638 120 130">Call: (+88) 09638 120 130</a>
-                    <a class="link" href="fb.com" target="_blank" class="facebook"><i class="lab la-facebook-square"></i></a>
-                    <a class="link" href="instagram.com" target="_blank"><i class="lab la-instagram"></i></a>
+                    <a class="link float-md-center text-md-center" href="tell: (+88) 09638 120 130">Call: (+88) 09638 120 130</a>
+                    <a class="link float-md-center text-md-center" href="fb.com" target="_blank" class="facebook"><i class="lab la-facebook-square"></i></a>
+                    <a class="link float-md-center text-md-center" href="instagram.com" target="_blank"><i class="lab la-instagram"></i></a>
                 </div>
             </div>
 
-            <div class="middle">
+            <div class="middle float-md-center">
                 <a class="link"
                     href="https://play.google.com/store/apps/details?id=com.banglameds.banglameds">Download App</a>
                 <a class="link" href="https://play.google.com/store/apps/details?id=com.banglameds.banglameds"
                     target="_blank"><i class="lab la-android"></i></a>
             </div>
 
-            <div class="right">
+            <div class="right float-md-end">
                 <a class="link" href="http://">How to order</a>
                 <a class="link" href="instagram.com" target="_blank"><i class="lab la-file-text"></i></a>
             </div>

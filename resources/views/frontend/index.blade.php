@@ -495,7 +495,7 @@
                     <li class="list-group-item bg-transparent border-0 p-0"><h5>৪. নির্দিষ্ট সময়ে আপনার ঔষধ/পণ্য ডেলিভারী নিন।</h5></li>
                     <li class="list-group-item bg-transparent border-0 p-0"><h5>৫. ঔষধ ডেলিভারীর সময় আপনার প্রেসক্রিপশন প্রদর্শন করুন।</h5></li>
                 </ul>
-
+                <button class="btn order-butotn">Upload Prescription</button>
             </div>
 
             <div class="col-md-6">
@@ -503,6 +503,7 @@
             </div>
 
         </div>
+        <div class="common-hr"></div>
     </div>
 
 
