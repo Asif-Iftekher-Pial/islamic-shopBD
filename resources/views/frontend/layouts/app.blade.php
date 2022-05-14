@@ -52,6 +52,7 @@
     <link
         href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&display=swap"
         rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
     <!-- CSS Files -->
     <link rel="stylesheet" href="{{ static_asset('assets/css/vendors.css') }}">
@@ -71,7 +72,7 @@
 
     <style>
         body {
-            font-family: 'Open Sans', sans-serif;
+            font-family: 'Work Sans', 'Arial', 'sans-serif';
             font-weight: 400;
         }
 

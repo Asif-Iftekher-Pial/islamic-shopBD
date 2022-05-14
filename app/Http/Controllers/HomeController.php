@@ -445,6 +445,143 @@ class HomeController extends Controller
             $conditions = array_merge($conditions, ['user_id' => Seller::findOrFail($seller_id)->user->id]);
         }
 
+        if ($request->ajax()){
+            if($request->request_product_id > 0)
+            {
+                $products = Product::where($conditions)->orWhere('id', '<', $request->request_product_id);
+
+                if($category_id != null){
+                    $category_ids = CategoryUtility::children_ids($category_id);
+                    $category_ids[] = $category_id;
+
+                    $products = $products->whereIn('category_id', $category_ids);
+                }
+
+                if($city_id != null){
+                    $shops_user_ids = Shop::whereJsonContains('shop_shippings', $city_id)->pluck('user_id')->toArray();
+                    // dd($shops_user_ids);
+
+                    $products = $products->whereIn('user_id', $shops_user_ids);
+                }
+
+                if($min_price != null && $max_price != null){
+                    $products = $products->where('unit_price', '>=', $min_price)->where('unit_price', '<=', $max_price);
+                }
+
+                if($query != null){
+                    $searchController = new SearchController;
+                    $searchController->store($request);
+                    $products = $products->where('name', 'like', '%'.$query.'%');
+                }
+
+                if($sort_by != null){
+                    switch ($sort_by) {
+                        case 'newest':
+                            $products->orderBy('created_at', 'desc');
+                            break;
+                        case 'oldest':
+                            $products->orderBy('created_at', 'asc');
+                            break;
+                        case 'price-asc':
+                            $products->orderBy('unit_price', 'asc');
+                            break;
+                        case 'price-desc':
+                            $products->orderBy('unit_price', 'desc');
+                            break;
+                        default:
+                            // code...
+                            break;
+                    }
+                }
+
+                $non_paginate_products = filter_products($products)->get();
+
+                //Attribute Filter
+
+                $attributes = array();
+                foreach ($non_paginate_products as $key => $product) {
+                    if($product->attributes != null && is_array(json_decode($product->attributes))){
+                        foreach (json_decode($product->attributes) as $key => $value) {
+                            $flag = false;
+                            $pos = 0;
+                            foreach ($attributes as $key => $attribute) {
+                                if($attribute['id'] == $value){
+                                    $flag = true;
+                                    $pos = $key;
+                                    break;
+                                }
+                            }
+                            if(!$flag){
+                                $item['id'] = $value;
+                                $item['values'] = array();
+                                foreach (json_decode($product->choice_options) as $key => $choice_option) {
+                                    if($choice_option->attribute_id == $value){
+                                        $item['values'] = $choice_option->values;
+                                        break;
+                                    }
+                                }
+                                array_push($attributes, $item);
+                            }
+                            else {
+                                foreach (json_decode($product->choice_options) as $key => $choice_option) {
+                                    if($choice_option->attribute_id == $value){
+                                        foreach ($choice_option->values as $key => $value) {
+                                            if(!in_array($value, $attributes[$pos]['values'])){
+                                                array_push($attributes[$pos]['values'], $value);
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+                $selected_attributes = array();
+
+                foreach ($attributes as $key => $attribute) {
+                    if($request->has('attribute_'.$attribute['id'])){
+                        foreach ($request['attribute_'.$attribute['id']] as $key => $value) {
+                            $str = '"'.$value.'"';
+                            $products = $products->where('choice_options', 'like', '%'.$str.'%');
+                        }
+
+                        $item['id'] = $attribute['id'];
+                        $item['values'] = $request['attribute_'.$attribute['id']];
+                        array_push($selected_attributes, $item);
+                    }
+                }
+
+
+                //Color Filter
+                $all_colors = array();
+
+                foreach ($non_paginate_products as $key => $product) {
+                    if ($product->colors != null) {
+                        foreach (json_decode($product->colors) as $key => $color) {
+                            if(!in_array($color, $all_colors)){
+                                array_push($all_colors, $color);
+                            }
+                        }
+                    }
+                }
+
+                $selected_color = null;
+
+                if($request->has('color')){
+                    $str = '"'.$request->color.'"';
+                    $products = $products->where('colors', 'like', '%'.$str.'%');
+                    $selected_color = $request->color;
+                }
+                return filter_products($products)->take(10)->get();
+            }
+            else
+            {
+                $products = Product::where($conditions);
+                return $products->get();
+            }
+        }
+
         $products = Product::where($conditions);
 
         if($category_id != null){
@@ -453,6 +590,7 @@ class HomeController extends Controller
 
             $products = $products->whereIn('category_id', $category_ids);
         }
+
         if($city_id != null){
             $shops_user_ids = Shop::whereJsonContains('shop_shippings', $city_id)->pluck('user_id')->toArray();
             // dd($shops_user_ids);
@@ -489,7 +627,6 @@ class HomeController extends Controller
                     break;
             }
         }
-
 
         $non_paginate_products = filter_products($products)->get();
 
@@ -572,10 +709,24 @@ class HomeController extends Controller
         }
 
 
+        $nonPagisateProducts = filter_products($products)->take(10)->get();
+
         $products = filter_products($products)->paginate(12)->appends(request()->query());
 
-        return view('frontend.product_listing', compact('products', 'query', 'category_id', 'brand_id', 'sort_by', 'seller_id','min_price', 'max_price', 'attributes', 'selected_attributes', 'all_colors', 'selected_color','city_id'));
+
+
+        return view('frontend.product_listing', compact('nonPagisateProducts', 'products', 'query', 'category_id', 'brand_id', 'sort_by', 'seller_id','min_price', 'max_price', 'attributes', 'selected_attributes', 'all_colors', 'selected_color','city_id'));
     }
+
+    // product load more
+    public function loadMore(Request $request){
+
+        if ($request->ajax()){
+
+        }
+    }
+
+
 
     public function home_settings(Request $request)
     {
@@ -888,7 +1039,7 @@ class HomeController extends Controller
 
     public function all_seller(Request $request) {
         $city_id = $request->city;
-        
+
         if ($request->city != null) {
             $shops = Shop::whereIn('user_id', verified_sellers_id())->whereJsonContains('shop_shippings', $request->city)->paginate(15);
         } else {
@@ -897,19 +1048,19 @@ class HomeController extends Controller
 
         return view('frontend.shop_listing', compact('shops','city_id'));
     }
-    
-    public function invest_page() 
-    {    
+
+    public function invest_page()
+    {
         return view('frontend.invest');
     }
-    
-    
-    public function invest_list() 
+
+
+    public function invest_list()
     {   $invests = Invest::orderBy('id', 'desc')->paginate(15);
         return view('backend.sellers.invest', compact('invests'));
     }
 
-    public function invest_store(Request $request) 
+    public function invest_store(Request $request)
     {   $invest = new Invest;
         $invest->email = $request->email;
         $invest->amount = $request->amount;
@@ -930,9 +1081,9 @@ class HomeController extends Controller
         $invest->save();
         return view('frontend.invest_success');
     }
-    
-    public function videos() 
-    {    
+
+    public function videos()
+    {
         return view('frontend.videos');
     }
 }

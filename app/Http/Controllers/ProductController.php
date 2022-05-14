@@ -209,7 +209,7 @@ class ProductController extends Controller
         if ($request->has('is_quantity_multiplied')) {
             $product->is_quantity_multiplied = 1;
         }
-        
+
         $product->meta_title = $request->meta_title;
         $product->meta_description = $request->meta_description;
 
@@ -519,18 +519,18 @@ class ProductController extends Controller
                 $product->shipping_cost = json_encode($request->shipping_cost);
             }
         }
-        
+
         if ($request->has('is_quantity_multiplied')) {
             $product->is_quantity_multiplied = 1;
         }
         if ($request->has('cash_on_delivery')) {
             $product->cash_on_delivery = 1;
         }
-        
+
         if ($request->has('featured')) {
             $product->featured = 1;
         }
-        
+
         if ($request->has('todays_deal')) {
             $product->todays_deal = 1;
         }
@@ -875,5 +875,8 @@ class ProductController extends Controller
         $combinations = Combinations::makeCombinations($options);
         return view('backend.product.products.sku_combinations_edit', compact('combinations', 'unit_price', 'colors_active', 'product_name', 'product'));
     }
+
+
+
 
 }

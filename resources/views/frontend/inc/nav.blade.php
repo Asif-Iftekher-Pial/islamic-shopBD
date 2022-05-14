@@ -195,6 +195,9 @@
                             </li>
                         @endforeach
                     </ul>
+
+
+                    
                     <ul class="list-inline mb-0 pl-0 mobile-hor-swipe">
                         <li class="list-inline-item mr-0">
                             <a href="{{ route('wishlists.index') }}"

@@ -266,3 +266,7 @@ Route::get('/blog/{slug}', 'BlogController@blog_details')->name('blog.details');
 
 //Custom page
 Route::get('/{slug}', 'PageController@show_custom_page')->name('custom-pages.show_custom_page');
+
+
+// loadMore data
+Route::post('/load-more/product-list','HomeController@search')->name('loadmore.load_data');
