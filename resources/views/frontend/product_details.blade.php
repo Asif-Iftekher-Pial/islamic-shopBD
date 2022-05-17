@@ -68,7 +68,7 @@
                                         @foreach (\App\Category::where('level', 0)->get() as $category)
                                             <li class="py-2 categoryList">
                                                 <a class="text-reset fs-18"
-                                                   href="{{ route('products.category', $category->slug) }}">{{ $category->getTranslation('name') }}</a>
+                                                    href="{{ route('products.category', $category->slug) }}">{{ $category->getTranslation('name') }}</a>
                                             </li>
                                         @endforeach
                                     </ul>
@@ -114,14 +114,14 @@
                                                                 </div>
                                                             @endif
                                                         @endforeach
-                                                            @foreach ($photos as $key => $photo)
-                                                                <div class="carousel-box img-zoom rounded">
-                                                                    <img class="img-fluid lazyload"
-                                                                        src="{{ static_asset('assets/img/placeholder.jpg') }}"
-                                                                        data-src="{{ uploaded_asset($photo) }}"
-                                                                        onerror="this.onerror=null;this.src='{{ static_asset('assets/img/placeholder.jpg') }}';">
-                                                                </div>
-                                                            @endforeach
+                                                        @foreach ($photos as $key => $photo)
+                                                            <div class="carousel-box img-zoom rounded">
+                                                                <img class="img-fluid lazyload"
+                                                                    src="{{ static_asset('assets/img/placeholder.jpg') }}"
+                                                                    data-src="{{ uploaded_asset($photo) }}"
+                                                                    onerror="this.onerror=null;this.src='{{ static_asset('assets/img/placeholder.jpg') }}';">
+                                                            </div>
+                                                        @endforeach
                                                     </div>
                                                 </div>
 
@@ -141,14 +141,15 @@
                                                             </div>
                                                         @endif
                                                     @endforeach
-                                                    @foreach ($photos as $key => $photo)
+                                                    {{-- product thumbnails images --}}
+                                                    {{-- @foreach ($photos as $key => $photo)
                                                         <div class="carousel-box  c-pointer border p-1 rounded">
                                                             <img class="lazyload  mw-100 size-50px mx-auto"
                                                                 src="{{ static_asset('assets/img/placeholder.jpg') }}"
                                                                 data-src="{{ uploaded_asset($photo) }}"
                                                                 onerror="this.onerror=null;this.src='{{ static_asset('assets/img/placeholder.jpg') }}';">
                                                         </div>
-                                                    @endforeach
+                                                    @endforeach --}}
                                                 </div>
                                             </div>
                                         </div>
@@ -204,60 +205,61 @@
                                                 <div class="d-flex">
                                                     @if (home_price($detailedProduct->id) != home_discounted_price($detailedProduct->id))
 
-                                                    <div class="row no-gutters mt-3">
-                                                        {{-- <div class="col-sm-2">
+                                                        <div class="row no-gutters mt-3">
+                                                            {{-- <div class="col-sm-2">
                                                             <div class="opacity-50 my-2">{{ translate('Price') }}:</div>
                                                         </div> --}}
-                                                        <div class="col-sm-10">
-                                                            <div class="fs-20 opacity-60">
-                                                                <del>
-                                                                    {{ home_price($detailedProduct->id) }}
-                                                                    @if ($detailedProduct->unit != null)
-                                                                        {{-- <span>/{{ $detailedProduct->getTranslation('unit') }}</span> --}}
-                                                                    @endif
-                                                                </del>
+                                                            <div class="col-sm-10">
+                                                                <div class="fs-20 opacity-60">
+                                                                    <del>
+                                                                        {{ home_price($detailedProduct->id) }}
+                                                                        @if ($detailedProduct->unit != null)
+                                                                            {{-- <span>/{{ $detailedProduct->getTranslation('unit') }}</span> --}}
+                                                                        @endif
+                                                                    </del>
+                                                                </div>
                                                             </div>
                                                         </div>
-                                                    </div>
 
-                                                    <div class="row no-gutters my-2 ">
-                                                        {{-- <div class="col-sm-2">
+                                                        <div class="row no-gutters my-2 ">
+                                                            {{-- <div class="col-sm-2">
                                                             <div class="opacity-50">
                                                                 {{ translate('Discount Price') }}:
                                                             </div>
                                                         </div> --}}
-                                                        <div class="col-sm-10">
-                                                            <div class="">
-                                                                <strong class="h2 fw-500 discountedPrice text-primary">
-                                                                    {{ home_discounted_price($detailedProduct->id) }}
-                                                                </strong>
-                                                                @if ($detailedProduct->unit != null)
-                                                                    {{-- <span
+                                                            <div class="col-sm-10">
+                                                                <div class="">
+                                                                    <strong class="h2 fw-500 discountedPrice text-primary">
+                                                                        {{ home_discounted_price($detailedProduct->id) }}
+                                                                    </strong>
+                                                                    @if ($detailedProduct->unit != null)
+                                                                        {{-- <span
                                                                         class="opacity-70">/{{ $detailedProduct->getTranslation('unit') }}</span> --}}
-                                                                @endif
+                                                                    @endif
+                                                                </div>
                                                             </div>
                                                         </div>
-                                                    </div>
-                                                @else
-                                                    <div class="row no-gutters mt-3">
-                                                        <div class="col-sm-2">
-                                                            <div class="opacity-50 my-2">{{ translate('Price') }}:</div>
-                                                        </div>
-                                                        <div class="col-sm-10">
-                                                            <div class="">
-                                                                <strong class="h2 fw-600 text-primary">
-                                                                    {{ home_discounted_price($detailedProduct->id) }}
-                                                                </strong>
-                                                                @if ($detailedProduct->unit != null)
-                                                                    <span
-                                                                        class="opacity-70">/{{ $detailedProduct->getTranslation('unit') }}</span>
-                                                                @endif
+                                                    @else
+                                                        <div class="row no-gutters mt-3">
+                                                            <div class="col-sm-2">
+                                                                <div class="opacity-50 my-2">{{ translate('Price') }}:
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-sm-10">
+                                                                <div class="">
+                                                                    <strong class="h2 fw-600 text-primary">
+                                                                        {{ home_discounted_price($detailedProduct->id) }}
+                                                                    </strong>
+                                                                    @if ($detailedProduct->unit != null)
+                                                                        <span
+                                                                            class="opacity-70">/{{ $detailedProduct->getTranslation('unit') }}</span>
+                                                                    @endif
+                                                                </div>
                                                             </div>
                                                         </div>
-                                                    </div>
-                                                @endif
+                                                    @endif
                                                 </div>
-                                               
+
 
                                                 @if (\App\Addon::where('unique_identifier', 'club_point')->first() != null && \App\Addon::where('unique_identifier', 'club_point')->first()->activated && $detailedProduct->earn_point > 0)
                                                     <div class="row no-gutters mt-4">
@@ -544,10 +546,241 @@
                                 </div>
                             </div>
 
+                            <div class="col-xl-9 order-0 order-xl-1">
+                                <div class="bg-white mb-3 shadow-sm rounded">
+                                    <div class="nav border-bottom aiz-nav-tabs">
+                                        <a href="#tab_default_1" data-toggle="tab"
+                                            class="p-3 fs-16 fw-600 text-reset show active">Description</a>
+                                        <a href="#tab_default_4" data-toggle="tab"
+                                            class="p-3 fs-16 fw-600 text-reset">Reviews</a>
+                                    </div>
 
+                                    <div class="tab-content pt-0">
+                                        <div class="tab-pane fade active show" id="tab_default_1">
+                                            <div class="p-4">
+                                                <div class="mw-100 overflow-hidden text-left">
+                                                    <h2
+                                                        style="-webkit-tap-highlight-color: transparent; outline: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; font-size: 14px; line-height: inherit; padding: 0px; font-family: &quot;Open Sans&quot;, Roboto, Arial, Helvetica, sans-serif, SimSun;">
+                                                        <span
+                                                            style="-webkit-tap-highlight-color: transparent; outline: 0px; color: rgb(192, 0, 0); font-weight: 700 !important;"><span
+                                                                data-spm-anchor-id="a2g0o.detail.1000023.i0.40d66ec1ugOeQN"
+                                                                style="-webkit-tap-highlight-color: transparent; outline: 0px; margin: 0px; padding: 0px; max-width: 100%; word-break: break-word; font-size: 22px; background-color: rgb(255, 255, 255);">CURREN
+                                                                8106 Men Watches Luxury Brand Analog sports Wristwatch
+                                                                Display Date Men's Quartz Watch Business Watch Relogio
+                                                                Masculino&nbsp;</span></span></h2>
+                                                    <p
+                                                        style="-webkit-tap-highlight-color: transparent; outline: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; font-size: 14px; line-height: inherit; padding: 0px; font-family: &quot;Open Sans&quot;, Roboto, Arial, Helvetica, sans-serif, SimSun;">
+                                                        <span
+                                                            style="-webkit-tap-highlight-color: transparent; outline: 0px; font-weight: bolder;"><br></span>
+                                                    </p>
+                                                    <p
+                                                        style="-webkit-tap-highlight-color: transparent; outline: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; font-size: 14px; line-height: inherit; padding: 0px; font-family: &quot;Open Sans&quot;, Roboto, Arial, Helvetica, sans-serif, SimSun;">
+                                                        <span
+                                                            style="-webkit-tap-highlight-color: transparent; outline: 0px; font-weight: bolder;">Main
+                                                            Features:</span></p>
+                                                    <div
+                                                        style="box-sizing: content-box; -webkit-tap-highlight-color: transparent; outline: 0px; margin: 0px; padding: 0px; font-family: &quot;Open Sans&quot;, Roboto, Arial, Helvetica, sans-serif, SimSun; font-size: 14px;">
+                                                        <span
+                                                            style="-webkit-tap-highlight-color: transparent; outline: 0px; margin: 0px; padding: 0px; max-width: 100%; word-break: break-word;">With
+                                                            imported quartz movement, high precise travel time.<br
+                                                                style="-webkit-tap-highlight-color: transparent; outline: 0px;">Classical
+                                                            round dial with date showing, interface simple, convenience for
+                                                            checking time.<br
+                                                                style="-webkit-tap-highlight-color: transparent; outline: 0px;">Stainless
+                                                            steel band design, make it be a high-end timepiece.<br
+                                                                style="-webkit-tap-highlight-color: transparent; outline: 0px;">Unique
+                                                            folding clasp with safety, easy to put on and off, enhance its
+                                                            practicality.<br
+                                                                style="-webkit-tap-highlight-color: transparent; outline: 0px;">30
+                                                            meters water resistance, durable as well as practical.<br
+                                                                style="-webkit-tap-highlight-color: transparent; outline: 0px;">Curren
+                                                            8106 Men Quartz Watch, your best choice for gifts.</span></div>
+                                                    <div
+                                                        style="box-sizing: content-box; -webkit-tap-highlight-color: transparent; outline: 0px; margin: 0px; padding: 0px; font-family: &quot;Open Sans&quot;, Roboto, Arial, Helvetica, sans-serif, SimSun; font-size: 14px;">
+                                                        <div
+                                                            style="box-sizing: content-box; -webkit-tap-highlight-color: transparent; outline: 0px; margin: 0px; padding: 0px;">
+                                                            <span
+                                                                style="-webkit-tap-highlight-color: transparent; outline: 0px; margin: 0px; padding: 0px; max-width: 100%; word-break: break-word;"><span
+                                                                    style="-webkit-tap-highlight-color: transparent; outline: 0px; font-weight: 700 !important;"><br></span></span>
+                                                        </div>
+                                                        <div
+                                                            style="box-sizing: content-box; -webkit-tap-highlight-color: transparent; outline: 0px; margin: 0px; padding: 0px;">
+                                                            <span
+                                                                style="-webkit-tap-highlight-color: transparent; outline: 0px; margin: 0px; padding: 0px; max-width: 100%; word-break: break-word;"><span
+                                                                    style="-webkit-tap-highlight-color: transparent; outline: 0px; font-weight: 700 !important;">Brand:</span>&nbsp;Curren<br
+                                                                    style="-webkit-tap-highlight-color: transparent; outline: 0px;"><span
+                                                                    style="-webkit-tap-highlight-color: transparent; outline: 0px; font-weight: 700 !important;">Watches
+                                                                    categories:</span>&nbsp;Male table</span></div>
+                                                        <div
+                                                            style="box-sizing: content-box; -webkit-tap-highlight-color: transparent; outline: 0px; margin: 0px; padding: 0px;">
+                                                            <span
+                                                                style="-webkit-tap-highlight-color: transparent; outline: 0px; margin: 0px; padding: 0px; max-width: 100%; word-break: break-word;"><span
+                                                                    style="-webkit-tap-highlight-color: transparent; outline: 0px; font-weight: 700 !important;">Movement
+                                                                    Type:</span>&nbsp;Quartz watch<br
+                                                                    style="-webkit-tap-highlight-color: transparent; outline: 0px;"><span
+                                                                    style="-webkit-tap-highlight-color: transparent; outline: 0px; font-weight: 700 !important;">The
+                                                                    shape of the dial:</span>&nbsp;Round<br
+                                                                    style="-webkit-tap-highlight-color: transparent; outline: 0px;"><span
+                                                                    style="-webkit-tap-highlight-color: transparent; outline: 0px; font-weight: 700 !important;">Display
+                                                                    Type:</span>&nbsp;Analog<br
+                                                                    style="-webkit-tap-highlight-color: transparent; outline: 0px;"><span
+                                                                    style="-webkit-tap-highlight-color: transparent; outline: 0px; font-weight: 700 !important;">Case
+                                                                    material:</span>&nbsp;Alloy</span></div>
+                                                        <div
+                                                            style="box-sizing: content-box; -webkit-tap-highlight-color: transparent; outline: 0px; margin: 0px; padding: 0px;">
+                                                            <span
+                                                                style="-webkit-tap-highlight-color: transparent; outline: 0px; margin: 0px; padding: 0px; max-width: 100%; word-break: break-word;"><span
+                                                                    style="-webkit-tap-highlight-color: transparent; outline: 0px; font-weight: 700 !important;">Band
+                                                                    Material:</span>&nbsp;Stainless Steel<br
+                                                                    style="-webkit-tap-highlight-color: transparent; outline: 0px;"><span
+                                                                    style="-webkit-tap-highlight-color: transparent; outline: 0px; font-weight: 700 !important;">Clasp
+                                                                    Type:</span>&nbsp;Folding clasp with safety</span></div>
+                                                        <div
+                                                            style="box-sizing: content-box; -webkit-tap-highlight-color: transparent; outline: 0px; margin: 0px; padding: 0px;">
+                                                            <span
+                                                                style="-webkit-tap-highlight-color: transparent; outline: 0px; margin: 0px; padding: 0px; max-width: 100%; word-break: break-word;"><span
+                                                                    style="-webkit-tap-highlight-color: transparent; outline: 0px; font-weight: 700 !important;">Water
+                                                                    resistance:</span>&nbsp;30 meters</span></div>
+                                                        <div
+                                                            style="box-sizing: content-box; -webkit-tap-highlight-color: transparent; outline: 0px; margin: 0px; padding: 0px;">
+                                                            <span
+                                                                style="-webkit-tap-highlight-color: transparent; outline: 0px; margin: 0px; padding: 0px; max-width: 100%; word-break: break-word;"><span
+                                                                    style="-webkit-tap-highlight-color: transparent; outline: 0px; font-weight: 700 !important;">The
+                                                                    dial thickness:</span>&nbsp;8 mm<br
+                                                                    style="-webkit-tap-highlight-color: transparent; outline: 0px;"><span
+                                                                    style="-webkit-tap-highlight-color: transparent; outline: 0px; font-weight: 700 !important;">The
+                                                                    dial diameter:</span>&nbsp;40 mm<br
+                                                                    style="-webkit-tap-highlight-color: transparent; outline: 0px;"><span
+                                                                    style="-webkit-tap-highlight-color: transparent; outline: 0px; font-weight: 700 !important;">The
+                                                                    bandwidth:</span>&nbsp;22 mm<br
+                                                                    style="-webkit-tap-highlight-color: transparent; outline: 0px;"><span
+                                                                    style="-webkit-tap-highlight-color: transparent; outline: 0px; font-weight: 700 !important;">Wearable
+                                                                    length:</span>&nbsp;206 mm</span></div>
+                                                        <div
+                                                            style="box-sizing: content-box; -webkit-tap-highlight-color: transparent; outline: 0px; margin: 0px; padding: 0px;">
+                                                            <span
+                                                                style="-webkit-tap-highlight-color: transparent; outline: 0px; margin: 0px; padding: 0px; max-width: 100%; word-break: break-word;"><br></span>
+                                                        </div>
+                                                        <div
+                                                            style="box-sizing: content-box; -webkit-tap-highlight-color: transparent; outline: 0px; margin: 0px; padding: 0px;">
+                                                            <span
+                                                                style="-webkit-tap-highlight-color: transparent; outline: 0px; margin: 0px; padding: 0px; max-width: 100%; word-break: break-word;"><img
+                                                                    src="https://ae01.alicdn.com/kf/HTB1IwLKMXXXXXXtXpXXq6xXFXXX2/225540043/HTB1IwLKMXXXXXXtXpXXq6xXFXXX2.jpg"
+                                                                    style="-webkit-tap-highlight-color: transparent; outline: 0px; border: 0px; margin: 0px; padding: 0px; max-width: 100%;"><img
+                                                                    src="https://ae01.alicdn.com/kf/HTB1C6jPMXXXXXXVXXXXq6xXFXXXw/225540043/HTB1C6jPMXXXXXXVXXXXq6xXFXXXw.jpg"
+                                                                    style="-webkit-tap-highlight-color: transparent; outline: 0px; border: 0px; margin: 0px; padding: 0px; max-width: 100%;"><img
+                                                                    src="https://ae01.alicdn.com/kf/HTB1y6biMXXXXXadaXXXq6xXFXXXF/225540043/HTB1y6biMXXXXXadaXXXq6xXFXXXF.jpg"
+                                                                    style="-webkit-tap-highlight-color: transparent; outline: 0px; border: 0px; margin: 0px; padding: 0px; max-width: 100%;"><img
+                                                                    src="https://ae01.alicdn.com/kf/HTB1tSDeMXXXXXbEaXXXq6xXFXXXx/225540043/HTB1tSDeMXXXXXbEaXXXq6xXFXXXx.jpg"
+                                                                    style="-webkit-tap-highlight-color: transparent; outline: 0px; border: 0px; margin: 0px; padding: 0px; max-width: 100%;"><img
+                                                                    src="https://ae01.alicdn.com/kf/HTB1s1fmMXXXXXbRXVXXq6xXFXXXq/225540043/HTB1s1fmMXXXXXbRXVXXq6xXFXXXq.jpg"
+                                                                    style="-webkit-tap-highlight-color: transparent; outline: 0px; border: 0px; margin: 0px; padding: 0px; max-width: 100%;"><img
+                                                                    src="https://ae01.alicdn.com/kf/HTB1eKvrMXXXXXX1XVXXq6xXFXXXw/225540043/HTB1eKvrMXXXXXX1XVXXq6xXFXXXw.jpg"
+                                                                    style="-webkit-tap-highlight-color: transparent; outline: 0px; border: 0px; margin: 0px; padding: 0px; max-width: 100%;"><img
+                                                                    src="https://ae01.alicdn.com/kf/HTB1SoviMXXXXXXzaXXXq6xXFXXXQ/225540043/HTB1SoviMXXXXXXzaXXXq6xXFXXXQ.jpg"
+                                                                    style="-webkit-tap-highlight-color: transparent; outline: 0px; border: 0px; margin: 0px; padding: 0px; max-width: 100%;"><img
+                                                                    src="https://ae01.alicdn.com/kf/HTB1chDOMXXXXXbiXXXXq6xXFXXXq/225540043/HTB1chDOMXXXXXbiXXXXq6xXFXXXq.jpg"
+                                                                    style="-webkit-tap-highlight-color: transparent; outline: 0px; border: 0px; margin: 0px; padding: 0px; max-width: 100%;"><img
+                                                                    src="https://ae01.alicdn.com/kf/HTB1JKvtMXXXXXXaXVXXq6xXFXXX7/225540043/HTB1JKvtMXXXXXXaXVXXq6xXFXXX7.jpg"
+                                                                    style="-webkit-tap-highlight-color: transparent; outline: 0px; border: 0px; margin: 0px; padding: 0px; max-width: 100%;"><img
+                                                                    src="https://ae01.alicdn.com/kf/HTB1mzLCMXXXXXaxXpXXq6xXFXXXq/225540043/HTB1mzLCMXXXXXaxXpXXq6xXFXXXq.jpg"
+                                                                    style="-webkit-tap-highlight-color: transparent; outline: 0px; border: 0px; margin: 0px; padding: 0px; max-width: 100%;"><img
+                                                                    src="https://ae01.alicdn.com/kf/HTB1UhndMXXXXXcTaXXXq6xXFXXXj/225540043/HTB1UhndMXXXXXcTaXXXq6xXFXXXj.jpg"
+                                                                    style="-webkit-tap-highlight-color: transparent; outline: 0px; border: 0px; margin: 0px; padding: 0px; max-width: 100%;"><img
+                                                                    src="https://ae01.alicdn.com/kf/HTB1wcPnMXXXXXbpXVXXq6xXFXXXr/225540043/HTB1wcPnMXXXXXbpXVXXq6xXFXXXr.jpg"
+                                                                    style="-webkit-tap-highlight-color: transparent; outline: 0px; border: 0px; margin: 0px; padding: 0px; max-width: 100%;"><img
+                                                                    src="https://ae01.alicdn.com/kf/HTB1TF_CMXXXXXXsXFXXq6xXFXXXM/225540043/HTB1TF_CMXXXXXXsXFXXq6xXFXXXM.jpg"
+                                                                    style="-webkit-tap-highlight-color: transparent; outline: 0px; border: 0px; margin: 0px; padding: 0px; max-width: 100%;"><img
+                                                                    src="https://ae01.alicdn.com/kf/HTB1mIjJMXXXXXX.XpXXq6xXFXXXD/225540043/HTB1mIjJMXXXXXX.XpXXq6xXFXXXD.jpg"
+                                                                    style="-webkit-tap-highlight-color: transparent; outline: 0px; border: 0px; margin: 0px; padding: 0px; max-width: 100%;"><img
+                                                                    src="https://ae01.alicdn.com/kf/HTB1enYpMXXXXXX5XVXXq6xXFXXXo/225540043/HTB1enYpMXXXXXX5XVXXq6xXFXXXo.jpg"
+                                                                    style="-webkit-tap-highlight-color: transparent; outline: 0px; border: 0px; margin: 0px; padding: 0px; max-width: 100%;"><img
+                                                                    src="https://ae01.alicdn.com/kf/HTB1s36sMXXXXXXzXVXXq6xXFXXXw/225540043/HTB1s36sMXXXXXXzXVXXq6xXFXXXw.jpg"
+                                                                    style="-webkit-tap-highlight-color: transparent; outline: 0px; border: 0px; margin: 0px; padding: 0px; max-width: 100%;"><img
+                                                                    src="https://ae01.alicdn.com/kf/HTB1MirHMXXXXXaSXpXXq6xXFXXXO/225540043/HTB1MirHMXXXXXaSXpXXq6xXFXXXO.jpg"
+                                                                    style="-webkit-tap-highlight-color: transparent; outline: 0px; border: 0px; margin: 0px; padding: 0px; max-width: 100%;"><img
+                                                                    src="https://ae01.alicdn.com/kf/HTB1nPjgMXXXXXbFaXXXq6xXFXXXS/225540043/HTB1nPjgMXXXXXbFaXXXq6xXFXXXS.jpg"
+                                                                    style="-webkit-tap-highlight-color: transparent; outline: 0px; border: 0px; margin: 0px; padding: 0px; max-width: 100%;"><img
+                                                                    src="https://ae01.alicdn.com/kf/HTB1trjKMXXXXXXEXpXXq6xXFXXXk/225540043/HTB1trjKMXXXXXXEXpXXq6xXFXXXk.jpg"
+                                                                    style="-webkit-tap-highlight-color: transparent; outline: 0px; border: 0px; margin: 0px; padding: 0px; max-width: 100%;"><img
+                                                                    src="https://ae01.alicdn.com/kf/HTB1pBPFMXXXXXbiXpXXq6xXFXXXs/225540043/HTB1pBPFMXXXXXbiXpXXq6xXFXXXs.jpg"
+                                                                    style="-webkit-tap-highlight-color: transparent; outline: 0px; border: 0px; margin: 0px; padding: 0px; max-width: 100%;"><img
+                                                                    src="https://ae01.alicdn.com/kf/HTB1D_2nMXXXXXbuXVXXq6xXFXXXd/225540043/HTB1D_2nMXXXXXbuXVXXq6xXFXXXd.jpg"
+                                                                    style="-webkit-tap-highlight-color: transparent; outline: 0px; border: 0px; margin: 0px; padding: 0px; max-width: 100%;"><img
+                                                                    src="https://ae01.alicdn.com/kf/HTB1dc6hMXXXXXbeaXXXq6xXFXXX6/225540043/HTB1dc6hMXXXXXbeaXXXq6xXFXXX6.jpg"
+                                                                    style="-webkit-tap-highlight-color: transparent; outline: 0px; border: 0px; margin: 0px; padding: 0px; max-width: 100%;"><br
+                                                                    style="-webkit-tap-highlight-color: transparent; outline: 0px;"></span>
+                                                        </div>
+                                                    </div>
+                                                    <p
+                                                        style="-webkit-tap-highlight-color: transparent; outline: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; font-size: 14px; line-height: inherit; padding: 0px; font-family: &quot;Open Sans&quot;, Roboto, Arial, Helvetica, sans-serif, SimSun;">
+                                                        <span
+                                                            style="-webkit-tap-highlight-color: transparent; outline: 0px; margin: 0px; padding: 0px; max-width: 100%; word-break: break-word;"><br
+                                                                style="-webkit-tap-highlight-color: transparent; outline: 0px;">Water-resistance
+                                                            is tested in measurements of the atmosphere (ATM). Each ATM
+                                                            denotes 10 meters of static water pressure. This is not the
+                                                            depth to which a watch can be worn. Many watch cases will list
+                                                            the basic measurement of 1 ATM as "water-resistant." These
+                                                            watches will withstand small splashes of water but should not be
+                                                            worn while washing the hands or submerging the hands in
+                                                            water.<br
+                                                                style="-webkit-tap-highlight-color: transparent; outline: 0px;"><br
+                                                                style="-webkit-tap-highlight-color: transparent; outline: 0px;">Remember,
+                                                            water resistance is tested under static conditions. Wearing a
+                                                            watch that is 50 meters water resistant in water will expose the
+                                                            watch to a much greater pressure than during a 50-meter static
+                                                            test. Therefore the number of meters shown on the watch does not
+                                                            indicate the depth that the watch can be taken to.</span></p>
+                                                </div>
+                                            </div>
+                                        </div>
 
+                                        <div class="tab-pane fade" id="tab_default_2">
+                                            <div class="p-4">
+                                                <div class="embed-responsive embed-responsive-16by9">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="tab-pane fade" id="tab_default_3">
+                                            <div class="p-4 text-center ">
+                                                <a href="" class="btn btn-primary">Download</a>
+                                            </div>
+                                        </div>
+                                        <div class="tab-pane fade" id="tab_default_4">
+                                            <div class="p-4">
+                                                <ul class="list-group list-group-flush">
+                                                </ul>
 
-                            <div class="aiz-filter-sidebar collapse-sidebar-wrap sidebar-xl sidebar-right z-1035">
+                                                <div class="text-center fs-18 opacity-70">
+                                                    There have been no reviews for this product yet.
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="bg-white rounded shadow-sm">
+                                    <div class="border-bottom p-3">
+                                        <h3 class="fs-16 fw-600 mb-0">
+                                            <span class="mr-4">Related products</span>
+                                        </h3>
+                                    </div>
+                                    <div class="p-3">
+                                        <div class="aiz-carousel gutters-5 half-outside-arrow slick-initialized slick-slider"
+                                            data-items="5" data-xl-items="3" data-lg-items="4" data-md-items="3"
+                                            data-sm-items="2" data-xs-items="2" data-arrows="true" data-infinite="true">
+                                            <div class="slick-list draggable">
+                                                <div class="slick-track"
+                                                    style="opacity: 1; width: 0px; transform: translate3d(0px, 0px, 0px);">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {{-- <div class="aiz-filter-sidebar collapse-sidebar-wrap sidebar-xl sidebar-right z-1035">
                                 <div class="overlay overlay-fixed dark c-pointer" data-toggle="class-toggle"
                                     data-target=".aiz-filter-sidebar" data-same=".filter-sidebar-thumb"></div>
                                 <div class="collapse-sidebar c-scrollbar-light text-left">
@@ -558,10 +791,10 @@
                                             {{ $detailedProduct->getTranslation('name') }}
                                         </div>
                                     </div>
-                                </div>
+                                </div> --}}
 
 
-                                {{-- <div class="col-xl-5 col-lg-6 mb-4">
+                            {{-- <div class="col-xl-5 col-lg-6 mb-4">
                         <div class="sticky-top z-3 row gutters-10">
                             @php
                                 $photos = explode(',', $detailedProduct->photos);
@@ -938,9 +1171,9 @@
                             </div>
                         </div>
                     </div> --}}
-                            </div>
                         </div>
                     </div>
+                </div>
     </section>
 
 
