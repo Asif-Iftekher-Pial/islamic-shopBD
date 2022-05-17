@@ -96,11 +96,11 @@
                                     </div>
                                     <div class="d-flex mt-3">
                                         <div class="col-md-6">
-                                            <div class=" z-3 row gutters-10">
+                                            <div class="z-3 row gutters-10">
                                                 @php
                                                     $photos = explode(',', $detailedProduct->photos);
                                                 @endphp
-                                                <div class="col order-1 order-md-2">
+                                                <div class="col order-1 order-md-2 pictureMargin">
                                                     <div class="aiz-carousel product-gallery"
                                                         data-nav-for='.product-gallery-thumb' data-fade='true'
                                                         data-auto-height='true'>
@@ -124,7 +124,6 @@
                                                         @endforeach
                                                     </div>
                                                 </div>
-
                                             </div>
                                             <div class="col-12 col-md-auto w-md-80px order-2  order-md-1 mt-3 mt-md-0">
                                                 <div class="aiz-carousel product-gallery-thumb " data-items='5'
@@ -550,7 +549,7 @@
                                 <div class="bg-white mb-3 shadow-sm rounded borderBackground">
                                     <div class="nav descriptionBorder aiz-nav-tabs activeClass">
                                         <a href="#tab_default_1" data-toggle="tab"
-                                            class="p-3 fs-16 fw-600 text-reset  ">Description</a>
+                                            class="p-3 fs-16 fw-600 text-reset">Description</a>
                                         <a href="#tab_default_4" data-toggle="tab"
                                             class="p-3 fs-16 fw-600 text-reset ">Reviews</a>
                                     </div>
@@ -661,13 +660,7 @@
                                                             <span
                                                                 style="-webkit-tap-highlight-color: transparent; outline: 0px; margin: 0px; padding: 0px; max-width: 100%; word-break: break-word;"><br></span>
                                                         </div>
-                                                        <div
-                                                            style="box-sizing: content-box; -webkit-tap-highlight-color: transparent; outline: 0px; margin: 0px; padding: 0px;">
-                                                            <span
-                                                                style="-webkit-tap-highlight-color: transparent; outline: 0px; margin: 0px; padding: 0px; max-width: 100%; word-break: break-word;"><img
-                                                                    src="https://ae01.alicdn.com/kf/HTB1IwLKMXXXXXXtXpXXq6xXFXXX2/225540043/HTB1IwLKMXXXXXXtXpXXq6xXFXXX2.jpg"
-                                                                    style="-webkit-tap-highlight-color: transparent; outline: 0px; border: 0px; margin: 0px; padding: 0px; max-width: 100%;"></span>
-                                                        </div>
+                                                       
                                                     </div>
                                                     <p
                                                         style="-webkit-tap-highlight-color: transparent; outline: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; font-size: 14px; line-height: inherit; padding: 0px; font-family: &quot;Open Sans&quot;, Roboto, Arial, Helvetica, sans-serif, SimSun;">
