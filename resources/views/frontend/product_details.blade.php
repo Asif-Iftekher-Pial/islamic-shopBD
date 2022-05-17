@@ -546,17 +546,17 @@
                                 </div>
                             </div>
 
-                            <div class="col-xl-9 order-0 order-xl-1">
-                                <div class="bg-white mb-3 shadow-sm rounded">
-                                    <div class="nav border-bottom aiz-nav-tabs">
+                            <div class="col-xl-12 order-0 order-xl-1">
+                                <div class="bg-white mb-3 shadow-sm rounded borderBackground">
+                                    <div class="nav descriptionBorder aiz-nav-tabs activeClass">
                                         <a href="#tab_default_1" data-toggle="tab"
-                                            class="p-3 fs-16 fw-600 text-reset show active">Description</a>
+                                            class="p-3 fs-16 fw-600 text-reset  ">Description</a>
                                         <a href="#tab_default_4" data-toggle="tab"
-                                            class="p-3 fs-16 fw-600 text-reset">Reviews</a>
+                                            class="p-3 fs-16 fw-600 text-reset ">Reviews</a>
                                     </div>
 
                                     <div class="tab-content pt-0">
-                                        <div class="tab-pane fade active show" id="tab_default_1">
+                                        <div class="tab-pane fade  " id="tab_default_1">
                                             <div class="p-4">
                                                 <div class="mw-100 overflow-hidden text-left">
                                                     <h2
@@ -666,50 +666,7 @@
                                                             <span
                                                                 style="-webkit-tap-highlight-color: transparent; outline: 0px; margin: 0px; padding: 0px; max-width: 100%; word-break: break-word;"><img
                                                                     src="https://ae01.alicdn.com/kf/HTB1IwLKMXXXXXXtXpXXq6xXFXXX2/225540043/HTB1IwLKMXXXXXXtXpXXq6xXFXXX2.jpg"
-                                                                    style="-webkit-tap-highlight-color: transparent; outline: 0px; border: 0px; margin: 0px; padding: 0px; max-width: 100%;"><img
-                                                                    src="https://ae01.alicdn.com/kf/HTB1C6jPMXXXXXXVXXXXq6xXFXXXw/225540043/HTB1C6jPMXXXXXXVXXXXq6xXFXXXw.jpg"
-                                                                    style="-webkit-tap-highlight-color: transparent; outline: 0px; border: 0px; margin: 0px; padding: 0px; max-width: 100%;"><img
-                                                                    src="https://ae01.alicdn.com/kf/HTB1y6biMXXXXXadaXXXq6xXFXXXF/225540043/HTB1y6biMXXXXXadaXXXq6xXFXXXF.jpg"
-                                                                    style="-webkit-tap-highlight-color: transparent; outline: 0px; border: 0px; margin: 0px; padding: 0px; max-width: 100%;"><img
-                                                                    src="https://ae01.alicdn.com/kf/HTB1tSDeMXXXXXbEaXXXq6xXFXXXx/225540043/HTB1tSDeMXXXXXbEaXXXq6xXFXXXx.jpg"
-                                                                    style="-webkit-tap-highlight-color: transparent; outline: 0px; border: 0px; margin: 0px; padding: 0px; max-width: 100%;"><img
-                                                                    src="https://ae01.alicdn.com/kf/HTB1s1fmMXXXXXbRXVXXq6xXFXXXq/225540043/HTB1s1fmMXXXXXbRXVXXq6xXFXXXq.jpg"
-                                                                    style="-webkit-tap-highlight-color: transparent; outline: 0px; border: 0px; margin: 0px; padding: 0px; max-width: 100%;"><img
-                                                                    src="https://ae01.alicdn.com/kf/HTB1eKvrMXXXXXX1XVXXq6xXFXXXw/225540043/HTB1eKvrMXXXXXX1XVXXq6xXFXXXw.jpg"
-                                                                    style="-webkit-tap-highlight-color: transparent; outline: 0px; border: 0px; margin: 0px; padding: 0px; max-width: 100%;"><img
-                                                                    src="https://ae01.alicdn.com/kf/HTB1SoviMXXXXXXzaXXXq6xXFXXXQ/225540043/HTB1SoviMXXXXXXzaXXXq6xXFXXXQ.jpg"
-                                                                    style="-webkit-tap-highlight-color: transparent; outline: 0px; border: 0px; margin: 0px; padding: 0px; max-width: 100%;"><img
-                                                                    src="https://ae01.alicdn.com/kf/HTB1chDOMXXXXXbiXXXXq6xXFXXXq/225540043/HTB1chDOMXXXXXbiXXXXq6xXFXXXq.jpg"
-                                                                    style="-webkit-tap-highlight-color: transparent; outline: 0px; border: 0px; margin: 0px; padding: 0px; max-width: 100%;"><img
-                                                                    src="https://ae01.alicdn.com/kf/HTB1JKvtMXXXXXXaXVXXq6xXFXXX7/225540043/HTB1JKvtMXXXXXXaXVXXq6xXFXXX7.jpg"
-                                                                    style="-webkit-tap-highlight-color: transparent; outline: 0px; border: 0px; margin: 0px; padding: 0px; max-width: 100%;"><img
-                                                                    src="https://ae01.alicdn.com/kf/HTB1mzLCMXXXXXaxXpXXq6xXFXXXq/225540043/HTB1mzLCMXXXXXaxXpXXq6xXFXXXq.jpg"
-                                                                    style="-webkit-tap-highlight-color: transparent; outline: 0px; border: 0px; margin: 0px; padding: 0px; max-width: 100%;"><img
-                                                                    src="https://ae01.alicdn.com/kf/HTB1UhndMXXXXXcTaXXXq6xXFXXXj/225540043/HTB1UhndMXXXXXcTaXXXq6xXFXXXj.jpg"
-                                                                    style="-webkit-tap-highlight-color: transparent; outline: 0px; border: 0px; margin: 0px; padding: 0px; max-width: 100%;"><img
-                                                                    src="https://ae01.alicdn.com/kf/HTB1wcPnMXXXXXbpXVXXq6xXFXXXr/225540043/HTB1wcPnMXXXXXbpXVXXq6xXFXXXr.jpg"
-                                                                    style="-webkit-tap-highlight-color: transparent; outline: 0px; border: 0px; margin: 0px; padding: 0px; max-width: 100%;"><img
-                                                                    src="https://ae01.alicdn.com/kf/HTB1TF_CMXXXXXXsXFXXq6xXFXXXM/225540043/HTB1TF_CMXXXXXXsXFXXq6xXFXXXM.jpg"
-                                                                    style="-webkit-tap-highlight-color: transparent; outline: 0px; border: 0px; margin: 0px; padding: 0px; max-width: 100%;"><img
-                                                                    src="https://ae01.alicdn.com/kf/HTB1mIjJMXXXXXX.XpXXq6xXFXXXD/225540043/HTB1mIjJMXXXXXX.XpXXq6xXFXXXD.jpg"
-                                                                    style="-webkit-tap-highlight-color: transparent; outline: 0px; border: 0px; margin: 0px; padding: 0px; max-width: 100%;"><img
-                                                                    src="https://ae01.alicdn.com/kf/HTB1enYpMXXXXXX5XVXXq6xXFXXXo/225540043/HTB1enYpMXXXXXX5XVXXq6xXFXXXo.jpg"
-                                                                    style="-webkit-tap-highlight-color: transparent; outline: 0px; border: 0px; margin: 0px; padding: 0px; max-width: 100%;"><img
-                                                                    src="https://ae01.alicdn.com/kf/HTB1s36sMXXXXXXzXVXXq6xXFXXXw/225540043/HTB1s36sMXXXXXXzXVXXq6xXFXXXw.jpg"
-                                                                    style="-webkit-tap-highlight-color: transparent; outline: 0px; border: 0px; margin: 0px; padding: 0px; max-width: 100%;"><img
-                                                                    src="https://ae01.alicdn.com/kf/HTB1MirHMXXXXXaSXpXXq6xXFXXXO/225540043/HTB1MirHMXXXXXaSXpXXq6xXFXXXO.jpg"
-                                                                    style="-webkit-tap-highlight-color: transparent; outline: 0px; border: 0px; margin: 0px; padding: 0px; max-width: 100%;"><img
-                                                                    src="https://ae01.alicdn.com/kf/HTB1nPjgMXXXXXbFaXXXq6xXFXXXS/225540043/HTB1nPjgMXXXXXbFaXXXq6xXFXXXS.jpg"
-                                                                    style="-webkit-tap-highlight-color: transparent; outline: 0px; border: 0px; margin: 0px; padding: 0px; max-width: 100%;"><img
-                                                                    src="https://ae01.alicdn.com/kf/HTB1trjKMXXXXXXEXpXXq6xXFXXXk/225540043/HTB1trjKMXXXXXXEXpXXq6xXFXXXk.jpg"
-                                                                    style="-webkit-tap-highlight-color: transparent; outline: 0px; border: 0px; margin: 0px; padding: 0px; max-width: 100%;"><img
-                                                                    src="https://ae01.alicdn.com/kf/HTB1pBPFMXXXXXbiXpXXq6xXFXXXs/225540043/HTB1pBPFMXXXXXbiXpXXq6xXFXXXs.jpg"
-                                                                    style="-webkit-tap-highlight-color: transparent; outline: 0px; border: 0px; margin: 0px; padding: 0px; max-width: 100%;"><img
-                                                                    src="https://ae01.alicdn.com/kf/HTB1D_2nMXXXXXbuXVXXq6xXFXXXd/225540043/HTB1D_2nMXXXXXbuXVXXq6xXFXXXd.jpg"
-                                                                    style="-webkit-tap-highlight-color: transparent; outline: 0px; border: 0px; margin: 0px; padding: 0px; max-width: 100%;"><img
-                                                                    src="https://ae01.alicdn.com/kf/HTB1dc6hMXXXXXbeaXXXq6xXFXXX6/225540043/HTB1dc6hMXXXXXbeaXXXq6xXFXXX6.jpg"
-                                                                    style="-webkit-tap-highlight-color: transparent; outline: 0px; border: 0px; margin: 0px; padding: 0px; max-width: 100%;"><br
-                                                                    style="-webkit-tap-highlight-color: transparent; outline: 0px;"></span>
+                                                                    style="-webkit-tap-highlight-color: transparent; outline: 0px; border: 0px; margin: 0px; padding: 0px; max-width: 100%;"></span>
                                                         </div>
                                                     </div>
                                                     <p

@@ -447,3 +447,12 @@ padding: 0.3rem 1.2rem;
 .cartIcon{
     font-size: 40px ;
 }
+.descriptionBorder{
+    border: 2px solid #04b0f0;
+}
+.activeClass a.active {
+    border-bottom: 0px solid #04b0f0 !important;
+    background-color: #04b0f0 !important;
+    color: white !important;
+    
+}
